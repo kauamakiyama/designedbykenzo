@@ -1,0 +1,127 @@
+/* Ocultar header mobile em telas grandes */
+.mobile-header {
+  display: none;
+}
+
+/* Prevenir scroll quando menu estiver aberto */
+body.mobile-menu-open {
+  overflow: hidden !important;
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 767px) {
+  /* Header mobile */
+  .mobile-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10% 7% !important;
+    background-color: #ffffff !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    height: 70px !important;      /* aumenta a altura */
+    
+  }
+
+  /* Botão hamburger */
+  .mobile-menu-button {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 10px !important;
+    z-index: 1001 !important;
+  }
+
+  .hamburger {
+    width: 28px !important;
+    height: 22px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .hamburger span {
+    display: block !important;
+    height: 3px !important;
+    width: 100% !important;
+    background-color: #000000 !important;
+    transition: all 0.3s ease !important;
+    transform-origin: center !important;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important;
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px) !important;
+  }
+
+  /* Overlay do menu mobile */
+  .mobile-menu-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    z-index: 999 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    animation: fadeIn 0.3s ease !important;
+    overflow: hidden !important;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .mobile-menu-content {
+    background-color: #ffffff !important;
+    width: 95% !important;
+    max-width: 500px !important;
+    max-height: 85vh !important;
+    border-radius: 12px !important;
+    padding: 50px 40px 40px 40px !important;
+    position: relative !important;
+    overflow-y: auto !important;
+  }
+
+  .mobile-menu-close {
+    position: absolute !important;
+    top: 15px !important;
+    right: 20px !important;
+    background: none !important;
+    border: none !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    color: #000000 !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-text-large {
+    font-size: 15vw !important;  /* aumenta a fonte no mobile */
+    text-align: left !important; /* centraliza o texto */
+    width: 100% !important;        /* garante que ocupe toda a linha */
+    margin-bottom: 8%;             /* respiro abaixo do título */
+  }
+
+  /* Sidebar responsiva - ocultar em mobile */
+  .sidebar-container {
+    display: none !important;
+  }
+}

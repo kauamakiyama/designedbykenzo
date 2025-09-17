@@ -1,0 +1,65 @@
+.sidebar-logo {
+  flex: 0 0 auto;
+  margin-bottom: 6%;
+}
+
+.logo {
+  align-self: flex-start;
+  margin-left: -20%;
+  margin-right: 0;
+  margin-top: -20%;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.7;
+}
+
+.logo-line {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.7vw;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.2;
+  letter-spacing: 0.1vw;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 767px) {
+  .sidebar-logo {
+    margin-bottom: 10%;
+    text-align: center;
+  }
+  
+  .logo {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    align-self: center;
+  }
+  
+  /* Logo geral em mobile */
+  .logo-line {
+    font-size: 6vw;            /* aumentei de 4.5vw → 6vw */
+    text-align: center;
+    letter-spacing: 0.25vw;
+  }
+
+  /* Estilos para logo no header mobile */
+  .mobile-header-logo {
+    flex: 0 0 auto !important;
+  }
+
+  .mobile-header-logo .logo-line {
+    font-size: 7vw !important; /* aumentei de 4vw → 5vw */
+    text-align: left !important;
+  }
+
+  /* Se estiver usando .logo-text */
+  .mobile-header .logo-text {
+    font-size: 48px !important; /* aumentei de 38px → 48px */
+  }
+}

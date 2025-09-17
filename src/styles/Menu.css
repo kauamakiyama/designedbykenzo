@@ -1,0 +1,141 @@
+.sidebar-menu {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 185%;
+  margin-top: auto;
+  margin-right: 30%;
+  align-self: flex-end;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  align-self: flex-start;
+  margin-right: 0;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.6vw;
+  font-weight: 500;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.05vw;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  margin-bottom: 15%;
+  margin-left: -10%;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.nav-item:hover {
+  color: #666666;
+}
+
+.nav-item.active {
+  color: #000000;
+  font-weight: 600;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.5vw;
+  width: 2vw;
+  height: 0.2vw;
+  background-color: #000000;
+}
+
+/* remove o foco padrão */
+.nav-item:focus,
+.nav-item:focus-visible,
+.nav-item:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Firefox */
+.nav-item::-moz-focus-inner { border: 0; }
+.nav-item:-moz-focusring { outline: none; }
+
+/* iOS/Safari (remove "flash" ao tocar) */
+.nav-item { -webkit-tap-highlight-color: transparent; }
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 767px) {
+  .sidebar-menu {
+    margin-bottom: 20%;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navigation {
+    flex-direction: row;
+    gap: 5%;
+    align-self: center;
+    margin-right: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-item {
+    font-size: 4vw;
+    margin-bottom: 5%;
+    margin-left: 0;
+    text-align: center;
+    padding: 2vw;
+  }
+  
+  .nav-item.active::after {
+    bottom: -1vw;
+    width: 4vw;
+    height: 0.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Estilos para menu mobile overlay */
+  .mobile-menu-navigation {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .mobile-menu-navigation .navigation {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .mobile-menu-navigation .nav-item {
+    font-size: 5vw !important;
+    text-align: center !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    border-bottom: 1px solid #eeeeee !important;
+  }
+
+  .mobile-menu-navigation .nav-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .mobile-menu-navigation .nav-item.active::after {
+    display: none !important;
+  }
+}
