@@ -72,7 +72,7 @@ const About = () => {
         </div>
 
                  {/* Label EN */}
-         <div style={{
+         <div className="language-label" style={{
            fontSize: '0.8vw',
            color: '#999999',
            textAlign: 'left',
@@ -146,7 +146,7 @@ const About = () => {
         </div>
 
         {/* Label PT */}
-        <div style={{
+        <div className="language-label" style={{
           fontSize: '0.8vw',
           color: '#999999',
           textAlign: 'left',
