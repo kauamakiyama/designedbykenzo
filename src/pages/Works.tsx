@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
@@ -8,32 +7,27 @@ const Works = () => {
   const location = useLocation()
   const [hoveredImage, setHoveredImage] = useState<number | null>(null)
 
-  // Array de imagens da pasta works com descrições
+  // Array de imagens da pasta works com descrições (links ImgBB)
   const images = [
     {
-      src: '/src/assets/works/storys mockup (2).png',
+      src: 'https://i.ibb.co/PvPdsSjv/storys-mockup.png',
       name: 'SKIPSTONE / 2025',
-      // year: '2024'
     },
     {
-      src: '/src/assets/works/works.jpg',
+      src: 'https://i.ibb.co/chTbm4T6/works.jpg',
       name: 'TNCO / 2023',
-      // year: '2023'
     },
     {
-      src: '/src/assets/works/Full Model VX 3.png',
+      src: 'https://i.ibb.co/pCjsvqs/Full-Model-VX-3.png',
       name: 'VELA / 2023',
-      // year: '2023'
     },
     {
-      src: '/src/assets/works/capa site - vento.png',
+      src: 'https://i.ibb.co/Wvww6szz/capa-site-vento.png',
       name: 'VENTO / 2024',
-      // year: '2024'
     },
     {
-      src: '/src/assets/works/cadeira.jpg',
+      src: 'https://i.ibb.co/KxrN62Z5/cadeira-animacao-tela.jpg',
       name: 'CADEIRA BAIXA / 2023',
-      // year: '2023'
     }
   ]
 
@@ -87,7 +81,7 @@ const Works = () => {
         overflow: 'visible',
         minHeight: '100vh'
       }}>
-        {/* oculos */}
+        {/* skipstone */}
         <div
           className="work-item"
           style={{
@@ -116,7 +110,6 @@ const Works = () => {
               target.style.display = 'none';
             }}
           />
-          {/* Overlay com descrição */}
           {hoveredImage === 0 && (
             <div className="work-overlay" style={{
               position: 'absolute',
@@ -135,12 +128,12 @@ const Works = () => {
               textAlign: 'center',
               padding: '2%'
             }}>
-                             <div>{images[0].name}</div>
+              <div>{images[0].name}</div>
             </div>
           )}
         </div>
 
-        {/* mercado */}
+        {/* tnco */}
         <div
           className="work-item"
           style={{
@@ -169,7 +162,6 @@ const Works = () => {
               target.style.display = 'none';
             }}
           />
-          {/* Overlay com descrição */}
           {hoveredImage === 1 && (
             <div className="work-overlay" style={{
               position: 'absolute',
@@ -188,12 +180,12 @@ const Works = () => {
               textAlign: 'center',
               padding: '2%'
             }}>
-                             <div>{images[1].name}</div>
+              <div>{images[1].name}</div>
             </div>
           )}
         </div>
 
-        {/* bike */}
+        {/* vela */}
         <div
           className="work-item"
           style={{
@@ -222,7 +214,6 @@ const Works = () => {
               target.style.display = 'none';
             }}
           />
-          {/* Overlay com descrição */}
           {hoveredImage === 2 && (
             <div className="work-overlay" style={{
               position: 'absolute',
@@ -241,7 +232,7 @@ const Works = () => {
               textAlign: 'center',
               padding: '2%'
             }}>
-                             <div>{images[2].name}</div>
+              <div>{images[2].name}</div>
             </div>
           )}
         </div>
@@ -275,7 +266,6 @@ const Works = () => {
               target.style.display = 'none';
             }}
           />
-          {/* Overlay com descrição */}
           {hoveredImage === 3 && (
             <div className="work-overlay" style={{
               position: 'absolute',
@@ -294,7 +284,7 @@ const Works = () => {
               textAlign: 'center',
               padding: '2%'
             }}>
-                             <div>{images[3].name}</div>
+              <div>{images[3].name}</div>
             </div>
           )}
         </div>
@@ -328,7 +318,6 @@ const Works = () => {
               target.style.display = 'none';
             }}
           />
-          {/* Overlay com descrição */}
           {hoveredImage === 4 && (
             <div className="work-overlay" style={{
               position: 'absolute',
@@ -347,7 +336,7 @@ const Works = () => {
               textAlign: 'center',
               padding: '2%'
             }}>
-                             <div>{images[4].name}</div>
+              <div>{images[4].name}</div>
             </div>
           )}
         </div>

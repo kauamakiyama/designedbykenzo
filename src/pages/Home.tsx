@@ -7,22 +7,21 @@ const Home = () => {
   const navigate = useNavigate()
   const location = useLocation()
   
-
-  // Array de imagens para o carrossel
+  // Array de imagens para o carrossel (ImgBB)
   const images = [
-    '/src/assets/home/att 1 (1).jpg',
-    '/src/assets/home/8 - ROSTOS.jpg',
-    '/src/assets/home/att 5 .jpg',
-    '/src/assets/home/IMG_9597 1 (1).png',
-    '/src/assets/home/Skateboard Mockup mlks 2.jpg',
-    '/src/assets/home/hn - bag - na medida .jpg',
-    '/src/assets/home/hn peitas - na medida.jpg',
-    '/src/assets/home/shape - na medida .jpg',
-    '/src/assets/home/suzuki peitas - na medida.jpg',
-    '/src/assets/home/vinil to vni - na medida.jpg',
-    '/src/assets/home/movel thiago .jpg',
-    '/src/assets/home/napkin .jpg',
-    '/src/assets/home/banco frontal  (1).jpg',
+    "https://i.ibb.co/CKCNh7kz/8-ROSTOS.jpg",
+    "https://i.ibb.co/NHRS8ck/att-1-1.jpg",
+    "https://i.ibb.co/0pQY604S/att-5.jpg",
+    "https://i.ibb.co/zV0GmHSf/banco-frontal-1.jpg",
+    "https://i.ibb.co/YBjRfQ5k/hn-bag-na-medida.jpg",
+    "https://i.ibb.co/Z1wkCJmM/hn-peitas-na-medida.jpg",
+    "https://i.ibb.co/LX9sYkNg/IMG-9597-1-1.png",
+    "https://i.ibb.co/SDz64vTy/movel-thiago.jpg",
+    "https://i.ibb.co/1xv9j7W/napkin.jpg",
+    "https://i.ibb.co/TqNkdt0j/shape-na-medida.jpg",
+    "https://i.ibb.co/G38DJzC0/Skateboard-Mockup-mlks-2.jpg",
+    "https://i.ibb.co/Mvcw9Qj/suzuki-peitas-na-medida.jpg",
+    "https://i.ibb.co/VpH4hQdg/vinil-to-vni-na-medida.jpg",
   ];
 
   // Auto-play do carrossel
@@ -38,19 +37,15 @@ const Home = () => {
 
   // Fixar página sem scroll e resetar posição
   useEffect(() => {
-    // Resetar scroll para o topo
     window.scrollTo(0, 0)
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
     
-    // Fixar página sem scroll
     document.body.classList.add('home-fixed')
     return () => {
       document.body.classList.remove('home-fixed')
     }
   }, [])
-
-
 
   // Função para navegar entre páginas
   const handlePageChange = (page: string) => {
@@ -107,31 +102,30 @@ const Home = () => {
           flex: 1,
           position: 'relative',
           overflow: 'hidden',
-          backgroundColor: '#ffffff', // Fallback de fundo caso as imagens não carreguem
+          backgroundColor: '#ffffff',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '2%'
         }}>
-                     {/* Imagem atual */}
-           <img
-             src={images[currentImageIndex]}
-             alt={`Slide ${currentImageIndex + 1}`}
-             className="carousel-image"
-             style={{
-               width: '100%',
-               height: (
-                 images[currentImageIndex].includes('IMG_9597 1 (1).png')
-               ) ? '75%' : '70%',
-               marginRight: '5%',
-               maxWidth: '100%',
-               maxHeight: '100%',
-               objectFit: 'cover',
-               objectPosition: 'center',
-               transition: 'opacity 0.5s ease-in-out'
-             }}
+          {/* Imagem atual */}
+          <img
+            src={images[currentImageIndex]}
+            alt={`Slide ${currentImageIndex + 1}`}
+            className="carousel-image"
+            style={{
+              width: '100%',
+              height: (
+                images[currentImageIndex].includes("IMG-9597")
+              ) ? '75%' : '70%',
+              marginRight: '5%',
+              maxWidth: '100%',
+              maxHeight: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              transition: 'opacity 0.5s ease-in-out'
+            }}
             onError={(e) => {
-              // Fallback caso a imagem não carregue
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
             }}
@@ -163,8 +157,6 @@ const Home = () => {
               />
             ))}
           </div>
-
-
         </div>
       </div>
     </div>

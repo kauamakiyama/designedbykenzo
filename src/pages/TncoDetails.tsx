@@ -23,13 +23,13 @@ const TncoDetails = () => {
     }
   };
 
-  // Array com as imagens do projeto TNCO
+  // Array com as imagens do projeto TNCO (links do ImgBB)
   const projectImages = [
-    { src: '/src/assets/details/tnco/att 5 .jpg', alt: 'TNCO - Imagem 5' },
-    { src: '/src/assets/details/tnco/att 1 (2).jpg', alt: 'TNCO - Imagem 1' },
-    { src: '/src/assets/details/tnco/att 2  (2).jpg', alt: 'TNCO - Imagem 2' },
-    { src: '/src/assets/details/tnco/att 3  (2).jpg', alt: 'TNCO - Imagem 3' },
-    { src: '/src/assets/details/tnco/att 4.jpg', alt: 'TNCO - Imagem 4' },
+    { src: 'https://i.ibb.co/0pQY604S/att-5.jpg', alt: 'TNCO - Imagem 5' },
+    { src: 'https://i.ibb.co/vxfpW7fQ/att-1.jpg', alt: 'TNCO - Imagem 1' },
+    { src: 'https://i.ibb.co/N2PHdBSF/att-2.jpg', alt: 'TNCO - Imagem 2' },
+    { src: 'https://i.ibb.co/JwGKMkgZ/att-3.jpg', alt: 'TNCO - Imagem 3' },
+    { src: 'https://i.ibb.co/nMP8NWNp/att-4.jpg', alt: 'TNCO - Imagem 4' },
   ];
 
   return (
@@ -71,13 +71,8 @@ const TncoDetails = () => {
           gap: '2%'
         }}>
           {/* Primeira imagem */}
-          <div style={{
-            width: '100%',
-            marginBottom: '2%'
-          }}>
-            <div style={{
-              width: '100%'
-            }}>
+          <div style={{ width: '100%', marginBottom: '2%' }}>
+            <div style={{ width: '100%' }}>
               <img
                 src={projectImages[0].src}
                 alt={projectImages[0].alt}
@@ -96,10 +91,7 @@ const TncoDetails = () => {
           </div>
 
           {/* Texto explicativo do projeto */}
-          <div style={{
-            width: '100%',
-            marginBottom: '4%'
-          }}>
+          <div style={{ width: '100%', marginBottom: '4%' }}>
             <div className="details-text" style={{
               fontSize: '1vw',
               color: '#666666',
@@ -117,13 +109,8 @@ const TncoDetails = () => {
 
           {/* Imagens restantes */}
           {projectImages.slice(1).map((image, index) => (
-            <div key={index} style={{
-              width: '100%',
-              marginBottom: '2%'
-            }}>
-              <div style={{
-                width: '100%'
-              }}>
+            <div key={index} style={{ width: '100%', marginBottom: '2%' }}>
+              <div style={{ width: '100%' }}>
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -139,14 +126,10 @@ const TncoDetails = () => {
                   }}
                 />
               </div>
-              
-              {/* Texto abaixo da 4ª imagem (att 4.jpg) */}
-              {index === 2 && (
-                <div style={{
-                  width: '100%',
-                  marginTop: '2%',
-                  marginBottom: '4%'
-                }}>
+
+              {/* Texto abaixo da 2ª imagem (att-1.jpg) */}
+              {index === 0 && (
+                <div style={{ width: '100%', marginTop: '2%', marginBottom: '4%' }}>
                   <div className="details-text" style={{
                     fontSize: '1vw',
                     color: '#666666',
@@ -157,19 +140,15 @@ const TncoDetails = () => {
                     fontStyle: 'italic'
                   }}>
                     <p style={{ marginBottom: '2%' }}>
-                      A "smart checkout" to carry out the checkout process with a clean, modern look and ergonomic design;
+                      Layouts can be adapted for each store, considering customer flow and space layout, optimizing the experience without compromising functionality.
                     </p>
                   </div>
                 </div>
               )}
 
-              {/* Texto abaixo da 3ª imagem (att 3 (2).jpg) */}
+              {/* Texto abaixo da 3ª imagem (att-2.jpg) */}
               {index === 1 && (
-                <div style={{
-                  width: '100%',
-                  marginTop: '2%',
-                  marginBottom: '4%'
-                }}>
+                <div style={{ width: '100%', marginTop: '2%', marginBottom: '4%' }}>
                   <div className="details-text" style={{
                     fontSize: '1vw',
                     color: '#666666',
@@ -186,13 +165,9 @@ const TncoDetails = () => {
                 </div>
               )}
 
-              {/* Texto abaixo da 2ª imagem (att 2  (2).jpg) */}
-              {index === 0 && (
-                <div style={{
-                  width: '100%',
-                  marginTop: '2%',
-                  marginBottom: '4%'
-                }}>
+              {/* Texto abaixo da 4ª imagem (att-3.jpg) */}
+              {index === 2 && (
+                <div style={{ width: '100%', marginTop: '2%', marginBottom: '4%' }}>
                   <div className="details-text" style={{
                     fontSize: '1vw',
                     color: '#666666',
@@ -203,7 +178,7 @@ const TncoDetails = () => {
                     fontStyle: 'italic'
                   }}>
                     <p style={{ marginBottom: '2%' }}>
-                      Layouts can be adapted for each store, considering customer flow and space layout, optimizing the experience without compromising functionality.
+                      A "smart checkout" to carry out the checkout process with a clean, modern look and ergonomic design;
                     </p>
                   </div>
                 </div>
@@ -216,4 +191,4 @@ const TncoDetails = () => {
   );
 };
 
-export default TncoDetails
+export default TncoDetails;

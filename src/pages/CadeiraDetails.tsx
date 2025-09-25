@@ -23,12 +23,12 @@ const CadeiraDetails = () => {
     }
   };
 
-  // Array com as imagens do projeto CADEIRA
+  // Array com as imagens do projeto CADEIRA (links ImgBB)
   const projectImages = [
-    { src: '/src/assets/details/cadeira/att 4 .jpg', alt: 'Cadeira Baixa - Imagem 4' },
-    { src: '/src/assets/details/cadeira/att 1.jpg', alt: 'Cadeira Baixa - Imagem 1' },
-    { src: '/src/assets/details/cadeira/att 3 .jpg', alt: 'Cadeira Baixa - Imagem 3' },
-    { src: '/src/assets/details/cadeira/att 2 .jpg', alt: 'Cadeira Baixa - Imagem 2' }
+    { src: 'https://i.ibb.co/rKBZ465C/att-4.jpg', alt: 'Cadeira Baixa - Imagem 4' },
+    { src: 'https://i.ibb.co/dJrzsxRz/att-1.jpg', alt: 'Cadeira Baixa - Imagem 1' },
+    { src: 'https://i.ibb.co/5Xd537KS/att-3.jpg', alt: 'Cadeira Baixa - Imagem 3' },
+    { src: 'https://i.ibb.co/CKM8vTpd/att-2.jpg', alt: 'Cadeira Baixa - Imagem 2' }
   ];
 
   return (
@@ -136,11 +136,8 @@ const CadeiraDetails = () => {
                     width: '100%',
                     height: 'auto',
                     maxWidth: '100%',
-                    // Ajuste especial para a imagem AN7DG_PROT_-97 2.jpg (4ª imagem)
                     objectFit: index === 2 ? 'cover' : 'contain',
-                    // Altura específica para a imagem AN7DG_PROT_-97 2.jpg
                     ...(index === 2 && { height: '100%', objectPosition: 'center' }),
-                    // Altura específica para a imagem att 2 .jpg (última imagem)
                     ...(index === 3 && { height: '100%', objectPosition: 'center' })
                   }}
                   onError={(e) => {
@@ -150,7 +147,7 @@ const CadeiraDetails = () => {
                 />
               </div>
               
-              {/* Texto abaixo da 2ª imagem (index 0 após slice) */}
+              {/* Texto abaixo da 2ª imagem */}
               {index === 0 && (
                 <div style={{
                   width: '100%',
@@ -176,7 +173,7 @@ const CadeiraDetails = () => {
                 </div>
               )}
 
-              {/* Texto abaixo da 3ª imagem (index 1 após slice) */}
+              {/* Texto abaixo da 3ª imagem */}
               {index === 1 && (
                 <div style={{
                   width: '100%',
@@ -193,13 +190,13 @@ const CadeiraDetails = () => {
                     fontStyle: 'italic'
                   }}>
                     <p style={{ marginBottom: '2%' }}>
-                      Ergonomic posture when sitting . Seat insert with side . Backrest fitting with side . Bottom view of the connections that join the seat to the sides of the chair.
+                      Ergonomic posture when sitting. Seat insert with side. Backrest fitting with side. Bottom view of the connections that join the seat to the sides of the chair.
                     </p>
                   </div>
                 </div>
               )}
 
-              {/* Texto abaixo da 4ª imagem (index 2 após slice) */}
+              {/* Texto abaixo da 4ª imagem */}
               {index === 2 && (
                 <div style={{
                   width: '100%',

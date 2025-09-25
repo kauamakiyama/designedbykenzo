@@ -23,20 +23,22 @@ const VelaDetails = () => {
     }
   };
 
-  // Array com as imagens do projeto VELA
+  // Array com as imagens do projeto VELA (links ImgBB)
   const projectImages = [
-    { src: '/src/assets/details/vela/att 1 (1).jpg', alt: 'Vela - Imagem 1' },
-    { src: '/src/assets/details/vela/att 2  (1).jpg', alt: 'Vela - Imagem 2' },
-    { src: '/src/assets/details/vela/att 3  (1).jpg', alt: 'Vela - Imagem 3' },
-    { src: '/src/assets/details/vela/att 4  (1).jpg', alt: 'Vela - Imagem 4' }
+    { src: 'https://i.ibb.co/NHRS8ck/att-1-1.jpg', alt: 'Vela - Imagem 1' },
+    { src: 'https://i.ibb.co/XfpNv3D6/att-2.jpg', alt: 'Vela - Imagem 2' },
+    { src: 'https://i.ibb.co/dJH731N4/att-3.jpg', alt: 'Vela - Imagem 3' },
+    { src: 'https://i.ibb.co/Xf6TK8fD/att-4.jpg', alt: 'Vela - Imagem 4' }
   ];
 
-  // Novos assets (Vite-safe URL resolution)
-  const capaVxUrl = new URL('../assets/details/vela/capa vx (1).jpg', import.meta.url).href;
-  const boostUrl = new URL('../assets/details/vela/boost (1).mp4', import.meta.url).href;
-  const mockupUrl = new URL('../assets/details/vela/Cópia de mockup.mp4', import.meta.url).href;
-  const explosionUrl = new URL('../assets/details/vela/explosion (1).mp4', import.meta.url).href;
-  const forkrenderUrl = new URL('../assets/details/vela/Forkrender (1).mp4', import.meta.url).href;
+  // Novos vídeos (Cloudinary)
+  const explosionUrl = 'https://res.cloudinary.com/dewjs94yc/video/upload/v1758763717/explosion_1_1_guowy0.mp4';
+  const boostUrl = 'https://res.cloudinary.com/dewjs94yc/video/upload/v1758763717/boost_1_1_g8trne.mp4';
+  const forkrenderUrl = 'https://res.cloudinary.com/dewjs94yc/video/upload/v1758763718/Forkrender_1_1_orke7g.mp4';
+  const mockupUrl = 'https://res.cloudinary.com/dewjs94yc/video/upload/v1758763718/Co%CC%81pia_de_mockup_1_m1jpzv.mp4';
+
+  // Nova imagem: capa vx (ImgBB)
+  const capaVxUrl = 'https://i.ibb.co/4QCCw0S/capa-vx.jpg';
 
   return (
     <div style={{
@@ -77,13 +79,8 @@ const VelaDetails = () => {
           gap: '2%'
         }}>
           {/* Primeira imagem */}
-          <div style={{
-            width: '100%',
-            marginBottom: '2%'
-          }}>
-            <div style={{
-              width: '100%'
-            }}>
+          <div style={{ width: '100%', marginBottom: '2%' }}>
+            <div style={{ width: '100%' }}>
               <img
                 src={projectImages[0].src}
                 alt={projectImages[0].alt}
@@ -102,10 +99,7 @@ const VelaDetails = () => {
           </div>
 
           {/* Texto explicativo do projeto */}
-          <div style={{
-            width: '100%',
-            marginBottom: '4%'
-          }}>
+          <div style={{ width: '100%', marginBottom: '4%' }}>
             <div className="details-text" style={{
               fontSize: '1vw',
               color: '#666666',
@@ -140,13 +134,8 @@ const VelaDetails = () => {
 
           {/* Imagens restantes */}
           {projectImages.slice(1).map((image, index) => (
-            <div key={index} style={{
-              width: '100%',
-              marginBottom: '2%'
-            }}>
-              <div style={{
-                width: '100%'
-              }}>
+            <div key={index} style={{ width: '100%', marginBottom: '2%' }}>
+              <div style={{ width: '100%' }}>
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -162,14 +151,10 @@ const VelaDetails = () => {
                   }}
                 />
               </div>
-              
-              {/* Texto abaixo da 2ª imagem (index 0 após slice) */}
+
+              {/* Texto abaixo da 2ª imagem (att-2.jpg) */}
               {index === 0 && (
-                <div style={{
-                  width: '100%',
-                  marginTop: '2%',
-                  marginBottom: '4%'
-                }}>
+                <div style={{ width: '100%', marginTop: '2%', marginBottom: '4%' }}>
                   <div className="details-text" style={{
                     fontSize: '1vw',
                     color: '#666666',
@@ -196,13 +181,9 @@ const VelaDetails = () => {
                 </div>
               )}
 
-              {/* Texto abaixo da 3ª imagem (index 1 após slice) */}
+              {/* Texto abaixo da 3ª imagem (att-3.jpg) */}
               {index === 1 && (
-                <div style={{
-                  width: '100%',
-                  marginTop: '2%',
-                  marginBottom: '4%'
-                }}>
+                <div style={{ width: '100%', marginTop: '2%', marginBottom: '4%' }}>
                   <div className="details-text" style={{
                     fontSize: '1vw',
                     color: '#666666',
@@ -221,7 +202,7 @@ const VelaDetails = () => {
             </div>
           ))}
 
-          {/* Nova imagem: capa vx (1).jpg */}
+          {/* Nova imagem: capa vx */}
           <div style={{ width: '100%', margin: '2% 0' }}>
             <img
               src={capaVxUrl}
@@ -249,4 +230,4 @@ const VelaDetails = () => {
   );
 };
 
-export default VelaDetails
+export default VelaDetails;

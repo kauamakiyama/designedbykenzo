@@ -1,5 +1,3 @@
-
-
 import { useNavigate, useLocation } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 
@@ -49,56 +47,56 @@ const About = () => {
         onPageChange={handlePageChange} 
       />
 
-             {/* Conteúdo principal */}
-       <div className="about-container content-area" style={{
-         flex: 1,
-         backgroundColor: '#ffffff',
-         display: 'flex',
-         flexDirection: 'column',
-         justifyContent: 'flex-start',
-         alignItems: 'flex-start',
-         padding: '15% 10%'
-       }}>
-                 {/* Título "HELLO." */}
-         <div className="mobile-text-large" style={{
-           fontSize: '9vw',
-           fontWeight: 'bold',
-           color: '#000000',
-           textTransform: 'uppercase',
-           textAlign: 'left',
-           fontFamily: 'Arial, sans-serif'
-         }}>
-           HELLO.
+      {/* Conteúdo principal */}
+      <div className="about-container content-area" style={{
+        flex: 1,
+        backgroundColor: '#ffffff',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        padding: '15% 10%'
+      }}>
+        {/* Título "HELLO." */}
+        <div className="mobile-text-large" style={{
+          fontSize: '9vw',
+          fontWeight: 'bold',
+          color: '#000000',
+          textTransform: 'uppercase',
+          textAlign: 'left',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          HELLO.
         </div>
 
-                 {/* Label EN */}
-         <div className="language-label" style={{
-           fontSize: '0.8vw',
-           color: '#999999',
-           textAlign: 'left',
-           maxWidth: '80%',
-           fontFamily: 'Arial, sans-serif',
-           fontWeight: '400',
-           marginBottom: '1%',
-           textTransform: 'uppercase'
-         }}>
-           [EN]
-         </div>
+        {/* Label EN */}
+        <div className="language-label" style={{
+          fontSize: '0.8vw',
+          color: '#999999',
+          textAlign: 'left',
+          maxWidth: '80%',
+          fontFamily: 'Arial, sans-serif',
+          fontWeight: '400',
+          marginBottom: '1%',
+          textTransform: 'uppercase'
+        }}>
+          [EN]
+        </div>
 
-         {/* Primeiro parágrafo (EN) */}
-         <div className="details-text" style={{
-           fontSize: '1vw',
-           color: '#666666',
-           textAlign: 'left',
-           maxWidth: '80%',
-           lineHeight: '1.8',
-           fontFamily: 'Arial, sans-serif',
-           fontWeight: '300',
-           fontStyle: 'italic',
-           marginBottom: '2%'
-         }}>
-           I'm Luan Kenzo, a designer based in São Paulo.
-         </div>
+        {/* Primeiro parágrafo (EN) */}
+        <div className="details-text" style={{
+          fontSize: '1vw',
+          color: '#666666',
+          textAlign: 'left',
+          maxWidth: '80%',
+          lineHeight: '1.8',
+          fontFamily: 'Arial, sans-serif',
+          fontWeight: '300',
+          fontStyle: 'italic',
+          marginBottom: '2%'
+        }}>
+          I'm Luan Kenzo, a designer based in São Paulo.
+        </div>
 
         {/* Segundo parágrafo (EN) */}
         <div className="details-text" style={{
@@ -226,7 +224,7 @@ const About = () => {
           marginTop: '10%'
         }}>
           <img
-            src={new URL('../assets/about/luan.png', import.meta.url).href}
+            src="https://i.ibb.co/zhLzJysJ/37909da8-3ae5-43ab-9bb8-e5d062fb2c26-1.png"
             alt="Luan Kenzo"
             style={{
               width: '100%',
