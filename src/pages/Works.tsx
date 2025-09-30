@@ -138,7 +138,7 @@ const Works = () => {
           className="work-item"
           style={{
             position: 'absolute',
-            top: '98%',
+            top: '105%',
             right: '8%',
             width: '35%',
             cursor: 'pointer'
@@ -190,7 +190,7 @@ const Works = () => {
           className="work-item"
           style={{
             position: 'absolute',
-            top: '52%',
+            top: '55%',
             left: '39%',
             width: '53%',
             cursor: 'pointer'
@@ -294,7 +294,7 @@ const Works = () => {
           className="work-item"
           style={{
             position: 'absolute',
-            marginTop: '47%',
+            top: '55%',
             right: '65%',
             width: '30%',
             cursor: 'pointer'

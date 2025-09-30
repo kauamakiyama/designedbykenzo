@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar'
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imagesLoaded, setImagesLoaded] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
   
@@ -24,8 +25,37 @@ const Home = () => {
     "https://i.ibb.co/VpH4hQdg/vinil-to-vni-na-medida.jpg",
   ];
 
-  // Auto-play do carrossel
+  // Pré-carregar todas as imagens
   useEffect(() => {
+    let loadedCount = 0
+    const totalImages = images.length
+
+    const preloadImages = () => {
+      images.forEach((src) => {
+        const img = new Image()
+        img.onload = () => {
+          loadedCount++
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true)
+          }
+        }
+        img.onerror = () => {
+          loadedCount++
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true)
+          }
+        }
+        img.src = src
+      })
+    }
+
+    preloadImages()
+  }, [images])
+
+  // Auto-play do carrossel (só inicia quando todas as imagens estão carregadas)
+  useEffect(() => {
+    if (!imagesLoaded) return
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
@@ -33,7 +63,7 @@ const Home = () => {
     }, 2000)
 
     return () => clearInterval(interval)
-  }, [images.length])
+  }, [images.length, imagesLoaded])
 
   // Fixar página sem scroll e resetar posição
   useEffect(() => {
@@ -109,54 +139,58 @@ const Home = () => {
           padding: '2%'
         }}>
           {/* Imagem atual */}
-          <img
-            src={images[currentImageIndex]}
-            alt={`Slide ${currentImageIndex + 1}`}
-            className="carousel-image"
-            style={{
-              width: '100%',
-              height: (
-                images[currentImageIndex].includes("IMG-9597")
-              ) ? '75%' : '70%',
-              marginRight: '5%',
-              maxWidth: '100%',
-              maxHeight: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              transition: 'opacity 0.5s ease-in-out'
-            }}
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-            }}
-          />
+          {imagesLoaded && (
+            <img
+              src={images[currentImageIndex]}
+              alt={`Slide ${currentImageIndex + 1}`}
+              className="carousel-image"
+              style={{
+                width: '100%',
+                height: (
+                  images[currentImageIndex].includes("IMG-9597")
+                ) ? '75%' : '70%',
+                marginRight: '5%',
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                transition: 'opacity 0.5s ease-in-out'
+              }}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
+          )}
           
           {/* Indicadores do carrossel */}
-          <div className="carousel-indicators" style={{
-            position: 'absolute',
-            bottom: '2%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            display: 'flex',
-            gap: '0.8%'
-          }}>
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentImageIndex(index)}
-                className="carousel-indicator"
-                style={{
-                  width: '1.2vw',
-                  height: '1.2vw',
-                  borderRadius: '50%',
-                  border: 'none',
-                  backgroundColor: index === currentImageIndex ? '#ffffff' : 'rgba(255, 255, 255, 0.5)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s'
-                }}
-              />
-            ))}
-          </div>
+          {imagesLoaded && (
+            <div className="carousel-indicators" style={{
+              position: 'absolute',
+              bottom: '2%',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              display: 'flex',
+              gap: '0.8%'
+            }}>
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className="carousel-indicator"
+                  style={{
+                    width: '1.2vw',
+                    height: '1.2vw',
+                    borderRadius: '50%',
+                    border: 'none',
+                    backgroundColor: index === currentImageIndex ? '#ffffff' : 'rgba(255, 255, 255, 0.5)',
+                    cursor: 'pointer',
+                    transition: 'background-color 0.2s'
+                  }}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
