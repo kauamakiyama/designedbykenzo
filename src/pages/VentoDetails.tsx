@@ -7,7 +7,7 @@ const VentoDetails = () => {
 
   // Array de mídia do projeto VENTO (vídeo + imagens)
   const projectMedia = [
-    { src: 'https://youtu.be/6Ha5yfTDat4', alt: 'VENTO - Vídeo', type: 'youtube' },
+    { src: 'https://youtu.be/W9J1b5sqV3k?si=nj7EPA-r445SjZBc', alt: 'VENTO - Vídeo', type: 'youtube' },
     { src: 'https://i.ibb.co/Fq5pFW9Q/02.jpg', alt: 'VENTO - Imagem 2' },
     { src: 'https://i.ibb.co/srNPcgJ/03.jpg', alt: 'VENTO - Imagem 3' },
     { src: 'https://i.ibb.co/zV6kHdbP/04.jpg', alt: 'VENTO - Imagem 4' },
