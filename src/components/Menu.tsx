@@ -1,18 +1,13 @@
 import React from 'react';
+import { menuItems, type PageId } from '../data/navigation';
 import '../styles/Menu.css';
 
 interface MenuProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
+  currentPage: PageId;
+  onPageChange: (page: PageId) => void;
 }
 
 const Menu: React.FC<MenuProps> = ({ currentPage, onPageChange }) => {
-  const menuItems = [
-    { id: 'works', label: 'Works' },
-    { id: 'about', label: 'About Me' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
   return (
     <nav className="navigation">
       {menuItems.map((item) => (

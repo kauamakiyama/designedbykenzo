@@ -1,0 +1,43 @@
+.works-grid {
+  position: relative;
+  overflow: visible;
+  min-height: 100vh;
+}
+
+.work-item {
+  position: absolute;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  appearance: none;
+  text-align: left;
+}
+
+.work-item:hover {
+  border-color: transparent;
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 2%;
+  pointer-events: none;
+}

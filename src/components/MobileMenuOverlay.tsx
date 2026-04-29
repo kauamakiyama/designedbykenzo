@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import Menu from './Menu';
+import type { PageId } from '../data/navigation';
 
 interface MobileMenuOverlayProps {
   isOpen: boolean;
-  currentPage: string;
-  onPageChange: (page: string) => void;
+  currentPage: PageId;
+  onPageChange: (page: PageId) => void;
   onClose: () => void;
 }
 
@@ -14,7 +15,7 @@ const MobileMenuOverlay: React.FC<MobileMenuOverlayProps> = ({
   onPageChange, 
   onClose 
 }) => {
-  const handlePageChange = (page: string) => {
+  const handlePageChange = (page: PageId) => {
     onPageChange(page);
     onClose(); // Fecha o menu após a navegação
   };

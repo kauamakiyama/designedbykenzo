@@ -1,8 +1,9 @@
 import React from 'react';
+import type { PageId } from '../data/navigation';
 import '../styles/Logo.css';
 
 interface LogoProps {
-  onPageChange?: (page: string) => void;
+  onPageChange?: (page: PageId) => void;
 }
 
 const Logo: React.FC<LogoProps> = ({ onPageChange }) => {

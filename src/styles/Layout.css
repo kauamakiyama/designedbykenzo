@@ -1,0 +1,102 @@
+.page-shell {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.page-content {
+  flex: 1;
+  background-color: #ffffff;
+}
+
+.sidebar-container {
+  width: 20%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  margin-top: 5%;
+  padding-left: 7%;
+  height: 100vh;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15% 10%;
+}
+
+.about-title {
+  font-size: 9vw;
+  font-weight: bold;
+  color: #000000;
+  text-transform: uppercase;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.about-language {
+  width: 100%;
+}
+
+.about-language + .about-language {
+  margin-top: 3%;
+}
+
+.language-label {
+  font-size: 0.8vw;
+  color: #999999;
+  text-align: left;
+  max-width: 80%;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  margin-bottom: 1%;
+  text-transform: uppercase;
+}
+
+.about-paragraph {
+  max-width: 80%;
+  margin: 0 0 2%;
+}
+
+.about-image-wrap {
+  width: 100%;
+  margin-top: 10%;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 18% 10%;
+}
+
+.contact-info {
+  font-size: 1.1vw;
+  color: #000000;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.contact-link {
+  margin-bottom: 1%;
+}
+
+.contact-link a {
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid #000000;
+}

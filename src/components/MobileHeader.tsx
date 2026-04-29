@@ -1,15 +1,14 @@
 import React from 'react';
 import Logo from './Logo';
+import type { PageId } from '../data/navigation';
 
 interface MobileHeaderProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
+  onPageChange: (page: PageId) => void;
   onMenuToggle: () => void;
   isMenuOpen: boolean;
 }
 
 const MobileHeader: React.FC<MobileHeaderProps> = ({ 
-  currentPage: _currentPage,
   onPageChange, 
   onMenuToggle, 
   isMenuOpen 

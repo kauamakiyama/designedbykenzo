@@ -1,4 +1,8 @@
 @import './styles/MobileComponents.css';
+@import './styles/Layout.css';
+@import './styles/Home.css';
+@import './styles/Works.css';
+@import './styles/Details.css';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -145,7 +149,7 @@ body.home-fixed {
     gap: 1% !important;
     padding: 55% 4% 4% 4% !important;
     position: static !important;
-    overflow: auto !important;
+    overflow: visible !important;
   }
   
   .work-item {
@@ -159,11 +163,11 @@ body.home-fixed {
   }
 
   /* Ajustes finos apenas no mobile: aumentar um pouco Vento (4º) e Cadeira (5º) */
-  .works-grid .work-item:nth-child(4) {
+  .works-grid .work-item--mobile-wide {
     width: 95% !important;
   }
 
-  .works-grid .work-item:nth-child(5) {
+  .works-grid .work-item--mobile-full {
     width: 98% !important;
   }
 
@@ -185,8 +189,7 @@ body.home-fixed {
   }
 
   /* Exceção: cadeira (mantém dimensões próprias) */
-  .work-item.cadeira-item .work-image,
-  .work-item:nth-child(5) .work-image {
+  .work-item--mobile-full .work-image {
     height: auto !important;
     max-height: 65vh !important;
     object-fit: contain !important;
