@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 15% 10%;
+  padding: 10% 10%;
 }
 
 .about-title {
@@ -79,7 +79,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 18% 10%;
+  padding: 10% 10%;
 }
 
 .contact-info {

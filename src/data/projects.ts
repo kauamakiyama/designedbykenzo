@@ -95,9 +95,9 @@ export const projects: Project[] = [
       priority: true,
     },
     worksPosition: {
-      top: '10%',
-      left: '5%',
-      width: '50%',
+      top: '14%',
+      right: '5%',
+      width: '55%',
     },
     mediaSections: [
       {
@@ -169,9 +169,9 @@ export const projects: Project[] = [
       alt: 'VELA project cover',
     },
     worksPosition: {
-      top: '55%',
-      left: '39%',
-      width: '53%',
+      top: '68%',
+      right: '5%',
+      width: '55%',
     },
     mediaSections: [
       { type: 'image', src: 'https://i.ibb.co/NHRS8ck/att-1-1.jpg', alt: 'Vela - Imagem 1', priority: true },
@@ -209,6 +209,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'quadro-realtree',
+    title: 'QUADRO CREATIONS X REALTREE',
+    year: '2026',
+    legacyPath: '/works/quadro-realtree-details',
+    worksLabel: 'QUADRO CREATIONS X REALTREE / 2026',
+    cover: {
+      src: 'https://i.ibb.co/jkVyBMfw/CASSIOANDREASI-1.jpg',
+      alt: 'QUADRO CREATIONS X REALTREE project cover',
+    },
+    worksPosition: {
+      top: '14%',
+      left: '5%',
+      width: '34%',
+    },
+    mediaGap: 'clamp(6px, 1.2vw, 20px)',
+    mediaSections: [
+      { type: 'image', src: 'https://i.ibb.co/jkVyBMfw/CASSIOANDREASI-1.jpg', alt: 'QUADRO X REALTREE - Imagem 1', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/9md3pZV6/CASSIOANDREASI-2.jpg', alt: 'QUADRO X REALTREE - Imagem 2', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/SD5mH7sb/CASSIOANDREASI-8.jpg', alt: 'QUADRO X REALTREE - Imagem 8', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/d0M78JWr/CASSIOANDREASI-12.jpg', alt: 'QUADRO X REALTREE - Imagem 12', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/5gw3HGwB/CASSIOANDREASI-15.jpg', alt: 'QUADRO X REALTREE - Imagem 15', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/3mPMf980/IMG-9920-JPG.jpg', alt: 'QUADRO X REALTREE - Imagem 22', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/nsbHZLrN/IMG-9921-JPG.jpg', alt: 'QUADRO X REALTREE - Imagem 23', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+    ],
+  },
+  {
     slug: 'vento',
     title: 'VENTO',
     year: '2024',
@@ -220,9 +246,9 @@ export const projects: Project[] = [
       priority: true,
     },
     worksPosition: {
-      top: '8.5%',
-      right: '7%',
-      width: '37%',
+      top: '79%',
+      left: '3.7%',
+      width: '36.2%',
     },
     mediaGap: 'clamp(8px, 0.8vw, 14px)',
     mediaSections: [
@@ -278,8 +304,8 @@ export const projects: Project[] = [
       alt: 'CADEIRA BAIXA project cover',
     },
     worksPosition: {
-      top: '55%',
-      right: '65%',
+      top: '130%',
+      left: '5%',
       width: '30%',
     },
     mediaSections: [
