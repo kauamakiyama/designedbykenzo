@@ -225,7 +225,16 @@ export const projects: Project[] = [
     },
     mediaGap: 'clamp(6px, 1.2vw, 20px)',
     mediaSections: [
-      { type: 'image', src: 'https://i.ibb.co/jkVyBMfw/CASSIOANDREASI-1.jpg', alt: 'QUADRO X REALTREE - Imagem 1', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      {
+        type: 'text',
+        spacing: '0 0 4%',
+        paragraphs: [
+          { text: 'A Quadro Creations desenvolveu, em colaboração com a Realtree, uma cápsula utilizando o padrão de camuflagem Realtree MAX-7®, marcando sua primeira colaboração oficial na América do Sul.' },
+          { text: 'Originalmente concebido para ambientes de caça aquática, o MAX-7® combina taboas, juncos, gramíneas e vegetação agrícola em uma composição visual pensada para dissolver a silhueta humana em pântanos, áreas alagadas e campos abertos. Um padrão que nasce da observação direta da paisagem e da necessidade de integração total ao ambiente.' },
+          { text: 'Como parte da instalação, o mobiliário foi desenvolvido por Luan Kenzo e Pedro Milani, com curadoria complementar de Lucas Borges e Gabriel Xavier. As peças partem de um diálogo entre os princípios da Realtree profundamente conectados ao universo natural e o contexto urbano em que a QC se insere. Madeira e metal se encontram como matéria e contraste, estabelecendo uma tensão entre natureza e cidade sem recorrer a uma leitura literal ou romantizada desse encontro.' },
+          { text: 'A cápsula traduz essa lógica de integração ao ambiente a partir da filosofia da QC de roupas como ferramenta. O lançamento apresenta três peças produzidas manualmente utilizando o padrão Realtree MAX-7®: a Large Tote Bag, a Mini Duffle Bag e um Dad Hat.' },
+        ],
+      },
       { type: 'image', src: 'https://i.ibb.co/9md3pZV6/CASSIOANDREASI-2.jpg', alt: 'QUADRO X REALTREE - Imagem 2', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
       { type: 'image', src: 'https://i.ibb.co/SD5mH7sb/CASSIOANDREASI-8.jpg', alt: 'QUADRO X REALTREE - Imagem 8', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
       { type: 'image', src: 'https://i.ibb.co/d0M78JWr/CASSIOANDREASI-12.jpg', alt: 'QUADRO X REALTREE - Imagem 12', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
