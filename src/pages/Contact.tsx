@@ -13,8 +13,8 @@ const contacts = [
   },
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/designedbykenzo/?hl=pt',
-    text: 'instagram.com/designedbykenzo',
+    href: 'https://www.instagram.com/naulkenzo/',
+    text: 'instagram.com/naulkenzo',
   },
   {
     label: 'LinkedIn',

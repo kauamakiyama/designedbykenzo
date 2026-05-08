@@ -159,56 +159,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'tnco',
-    title: 'TNCO',
-    year: '2023',
-    legacyPath: '/works/tnco-details',
-    cover: {
-      src: 'https://i.ibb.co/chTbm4T6/works.jpg',
-      alt: 'TNCO project cover',
-    },
-    worksPosition: {
-      top: '105%',
-      right: '8%',
-      width: '35%',
-    },
-    mediaSections: [
-      { type: 'image', src: 'https://i.ibb.co/0pQY604S/att-5.jpg', alt: 'TNCO - Imagem 5', priority: true },
-      {
-        type: 'text',
-        spacing: '0 0 4%',
-        paragraphs: [
-          { text: 'Designed especially for pharmacies, The New Check Out provides a more comfortable and intuitive shopping experience.' },
-        ],
-      },
-      { type: 'image', src: 'https://i.ibb.co/vxfpW7fQ/att-1.jpg', alt: 'TNCO - Imagem 1' },
-      {
-        type: 'text',
-        spacing: '2% 0 4%',
-        paragraphs: [
-          { text: 'Layouts can be adapted for each store, considering customer flow and space layout, optimizing the experience without compromising functionality.' },
-        ],
-      },
-      { type: 'image', src: 'https://i.ibb.co/N2PHdBSF/att-2.jpg', alt: 'TNCO - Imagem 2' },
-      {
-        type: 'text',
-        spacing: '2% 0 4%',
-        paragraphs: [
-          { text: 'The New Check Out prioritizes employee ergonomics, offering adjustable workstations that minimize physical effort during service. The counters have individual height adjustment, ensuring comfort and efficiency for different body types, promoting a more inclusive and ergonomic environment.' },
-        ],
-      },
-      { type: 'image', src: 'https://i.ibb.co/JwGKMkgZ/att-3.jpg', alt: 'TNCO - Imagem 3' },
-      {
-        type: 'text',
-        spacing: '2% 0 4%',
-        paragraphs: [
-          { text: 'A "smart checkout" to carry out the checkout process with a clean, modern look and ergonomic design;' },
-        ],
-      },
-      { type: 'image', src: 'https://i.ibb.co/nMP8NWNp/att-4.jpg', alt: 'TNCO - Imagem 4' },
-    ],
-  },
-  {
     slug: 'vela',
     title: 'VELA',
     year: '2024',
