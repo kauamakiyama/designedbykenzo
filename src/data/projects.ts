@@ -169,7 +169,7 @@ export const projects: Project[] = [
       alt: 'VELA project cover',
     },
     worksPosition: {
-      top: '68%',
+      top: '63%',
       right: '5%',
       width: '55%',
     },
@@ -246,8 +246,8 @@ export const projects: Project[] = [
       priority: true,
     },
     worksPosition: {
-      top: '79%',
-      left: '3.7%',
+      top: '73%',
+      left: '3.5%',
       width: '36.2%',
     },
     mediaGap: 'clamp(8px, 0.8vw, 14px)',
@@ -304,7 +304,7 @@ export const projects: Project[] = [
       alt: 'CADEIRA BAIXA project cover',
     },
     worksPosition: {
-      top: '130%',
+      top: '125%',
       left: '5%',
       width: '30%',
     },

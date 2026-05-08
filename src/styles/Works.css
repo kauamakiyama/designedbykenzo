@@ -1,8 +1,8 @@
 .works-grid {
   position: relative;
   overflow: visible;
-  min-height: 100vh;
-  margin-bottom: 20vh;
+  min-height: 56.25vw;
+  margin-bottom: 11.25vw;
 }
 
 .work-item {
