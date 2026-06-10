@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:ibb.co)"
+      "WebFetch(domain:ibb.co)",
+      "Bash(Get-ChildItem -Recurse -File -Include *.html, *.js, *.css)",
+      "Bash(Select-Object -First 20)"
     ]
   }
 }

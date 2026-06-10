@@ -20,6 +20,11 @@
   border-color: transparent;
 }
 
+.work-item:focus,
+.work-item:focus-visible {
+  outline: none;
+}
+
 .work-image {
   width: 100%;
   height: auto;

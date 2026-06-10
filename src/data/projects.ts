@@ -229,10 +229,10 @@ export const projects: Project[] = [
         type: 'text',
         spacing: '0 0 4%',
         paragraphs: [
-          { text: 'A Quadro Creations desenvolveu, em colaboração com a Realtree, uma cápsula utilizando o padrão de camuflagem Realtree MAX-7®, marcando sua primeira colaboração oficial na América do Sul.' },
-          { text: 'Originalmente concebido para ambientes de caça aquática, o MAX-7® combina taboas, juncos, gramíneas e vegetação agrícola em uma composição visual pensada para dissolver a silhueta humana em pântanos, áreas alagadas e campos abertos. Um padrão que nasce da observação direta da paisagem e da necessidade de integração total ao ambiente.' },
-          { text: 'Como parte da instalação, o mobiliário foi desenvolvido por Luan Kenzo e Pedro Milani, com curadoria complementar de Lucas Borges e Gabriel Xavier. As peças partem de um diálogo entre os princípios da Realtree profundamente conectados ao universo natural e o contexto urbano em que a QC se insere. Madeira e metal se encontram como matéria e contraste, estabelecendo uma tensão entre natureza e cidade sem recorrer a uma leitura literal ou romantizada desse encontro.' },
-          { text: 'A cápsula traduz essa lógica de integração ao ambiente a partir da filosofia da QC de roupas como ferramenta. O lançamento apresenta três peças produzidas manualmente utilizando o padrão Realtree MAX-7®: a Large Tote Bag, a Mini Duffle Bag e um Dad Hat.' },
+          { text: 'Quadro Creations partnered with Realtree on a capsule built around the Realtree MAX-7® camouflage pattern, marking its first official collaboration in South America.' },
+          { text: 'Originally designed for waterfowl hunting, MAX-7® blends cattails, reeds, grasses and farmland vegetation into a visual composition built to dissolve the human silhouette across marshes, wetlands and open fields - a pattern born from close observation of the landscape and the need to disappear completely into it.' },
+          { text: "As part of the installation, the furniture pieces were designed by Luan Kenzo and Pedro Milani, with additional curation by Lucas Borges and Gabriel Xavier. The collection draws on a dialogue between Realtree's principles - deeply rooted in the natural world - and the urban context QC operates in. Wood and metal meet as both material and contrast, building tension between nature and city without leaning on a literal or romanticized take on that encounter." },
+          { text: "The capsule channels that same logic of blending into the environment through QC's philosophy of clothing as a tool. The drop features three handmade pieces in the Realtree MAX-7® pattern: the Large Tote Bag, the Mini Duffle Bag, and a Dad Hat." },
         ],
       },
       { type: 'image', src: 'https://i.ibb.co/9md3pZV6/CASSIOANDREASI-2.jpg', alt: 'QUADRO X REALTREE - Imagem 2', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
@@ -359,8 +359,8 @@ export const projects: Project[] = [
 
 export const homeCarouselImages: ProjectImage[] = [
   { src: 'https://i.ibb.co/CKCNh7kz/8-ROSTOS.jpg', alt: 'Portfolio slide 1' },
-  { src: 'https://i.ibb.co/NHRS8ck/att-1-1.jpg', alt: 'Portfolio slide 2' },
-  { src: 'https://i.ibb.co/0pQY604S/att-5.jpg', alt: 'Portfolio slide 3' },
+  { src: 'https://i.ibb.co/9md3pZV6/CASSIOANDREASI-2.jpg', alt: 'Portfolio slide 2' },
+  { src: 'https://i.ibb.co/3mPMf980/IMG-9920-JPG.jpg', alt: 'Portfolio slide 3' },
   { src: 'https://i.ibb.co/zV0GmHSf/banco-frontal-1.jpg', alt: 'Portfolio slide 4' },
   { src: 'https://i.ibb.co/YBjRfQ5k/hn-bag-na-medida.jpg', alt: 'Portfolio slide 5' },
   { src: 'https://i.ibb.co/Z1wkCJmM/hn-peitas-na-medida.jpg', alt: 'Portfolio slide 6' },

@@ -32,6 +32,7 @@ const Works = () => {
               alt={project.cover.alt}
               className="work-image"
               priority={project.cover.priority}
+              width={800}
             />
 
             {hoveredProject === project.slug && (

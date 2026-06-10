@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import PageShell from '../components/PageShell'
 import OptimizedImage from '../components/OptimizedImage'
+import { getOptimizedImageUrl } from '../utils/imageOptimization'
 import { homeCarouselImages } from '../data/projects'
+
+const CAROUSEL_IMAGE_WIDTH = 1920
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -15,7 +18,7 @@ const Home = () => {
     nextIndexes.forEach((index) => {
       const image = new Image()
       image.decoding = 'async'
-      image.src = homeCarouselImages[index].src
+      image.src = getOptimizedImageUrl(homeCarouselImages[index].src, CAROUSEL_IMAGE_WIDTH)
     })
   }, [currentImageIndex])
 
@@ -24,7 +27,7 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) => (
         prevIndex === homeCarouselImages.length - 1 ? 0 : prevIndex + 1
       ))
-    }, 2000)
+    }, 1600)
 
     return () => clearInterval(interval)
   }, [])
@@ -48,6 +51,7 @@ const Home = () => {
         alt={currentImage.alt}
         className="carousel-image"
         priority
+        width={CAROUSEL_IMAGE_WIDTH}
         style={{
           height: currentImage.src.includes('IMG-9597') ? '75%' : '70%',
         }}

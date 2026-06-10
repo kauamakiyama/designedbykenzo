@@ -1,7 +1,9 @@
 import type { CSSProperties, ImgHTMLAttributes, SyntheticEvent } from 'react'
+import { getOptimizedImageUrl } from '../utils/imageOptimization'
 
 interface OptimizedImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   priority?: boolean
+  width?: number
 }
 
 const baseStyle: CSSProperties = {
@@ -15,6 +17,8 @@ const OptimizedImage = ({
   fetchPriority,
   style,
   onError,
+  src,
+  width,
   ...props
 }: OptimizedImageProps) => {
   const handleError = (event: SyntheticEvent<HTMLImageElement>) => {
@@ -25,6 +29,7 @@ const OptimizedImage = ({
   return (
     <img
       {...props}
+      src={typeof src === 'string' ? getOptimizedImageUrl(src, width) : src}
       loading={loading ?? (priority ? 'eager' : 'lazy')}
       decoding={decoding}
       fetchPriority={fetchPriority ?? (priority ? 'high' : 'low')}
