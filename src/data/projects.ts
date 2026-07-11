@@ -169,7 +169,7 @@ export const projects: Project[] = [
       alt: 'VELA project cover',
     },
     worksPosition: {
-      top: '63%',
+      top: '61%',
       right: '5%',
       width: '55%',
     },
@@ -250,14 +250,14 @@ export const projects: Project[] = [
     legacyPath: '/works/vento-details',
     worksMobileSize: 'wide',
     cover: {
-      src: 'https://i.ibb.co/Wvww6szz/capa-site-vento.png',
+      src: '/images/vento-cover.jpg',
       alt: 'VENTO project cover',
       priority: true,
     },
     worksPosition: {
-      top: '73%',
-      left: '3.5%',
-      width: '36.2%',
+      top: '111%',
+      right: '5%',
+      width: '55%',
     },
     mediaGap: 'clamp(8px, 0.8vw, 14px)',
     mediaSections: [
@@ -313,9 +313,9 @@ export const projects: Project[] = [
       alt: 'CADEIRA BAIXA project cover',
     },
     worksPosition: {
-      top: '125%',
+      top: '130%',
       left: '5%',
-      width: '30%',
+      width: '34%',
     },
     mediaSections: [
       { type: 'image', src: 'https://i.ibb.co/rKBZ465C/att-4.jpg', alt: 'Cadeira Baixa - Imagem 4', priority: true },
@@ -355,6 +355,40 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: 'levis',
+    title: 'LEVIS',
+    year: '2026',
+    worksLabel: 'LEVIS / 2026',
+    cover: {
+      src: 'https://i.ibb.co/gMFq91zF/1-1.jpg',
+      alt: 'LEVIS project cover',
+    },
+    worksPosition: {
+      top: '72%',
+      left: '5%',
+      width: '34%',
+    },
+    mediaGap: 'clamp(6px, 1.2vw, 20px)',
+    mediaSections: [
+      {
+        type: 'text',
+        spacing: '0 0 4%',
+        paragraphs: [
+          { text: "Objects developed for @levisbrasil's 501 Day." },
+          { text: "Stools made from wood and reclaimed denim, created to accompany the event's workshops and experiences." },
+          { text: 'Project developed in collaboration with @rpazzini._ and @toncley_. 👖🪵' },
+        ],
+      },
+      { type: 'image', src: 'https://i.ibb.co/BV9TfpcR/6-1.jpg', alt: 'LEVIS - Imagem 1', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/h1c8P1j4/3-1.jpg', alt: 'LEVIS - Imagem 2', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/xtpVmCqD/5-1.jpg', alt: 'LEVIS - Imagem 3', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/gMFq91zF/1-1.jpg', alt: 'LEVIS - Imagem 4', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/Rkpp0YFL/2-1.jpg', alt: 'LEVIS - Imagem 5', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/9mH896Gr/4-1.jpg', alt: 'LEVIS - Imagem 6', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/JRHm9cx0/7-1.jpg', alt: 'LEVIS - Imagem 7', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+    ],
+  },
 ]
 
 export const homeCarouselImages: ProjectImage[] = [
@@ -364,7 +398,7 @@ export const homeCarouselImages: ProjectImage[] = [
   { src: 'https://i.ibb.co/zV0GmHSf/banco-frontal-1.jpg', alt: 'Portfolio slide 4' },
   { src: 'https://i.ibb.co/YBjRfQ5k/hn-bag-na-medida.jpg', alt: 'Portfolio slide 5' },
   { src: 'https://i.ibb.co/Z1wkCJmM/hn-peitas-na-medida.jpg', alt: 'Portfolio slide 6' },
-  { src: 'https://i.ibb.co/LX9sYkNg/IMG-9597-1-1.png', alt: 'Portfolio slide 7' },
+  { src: '/images/vento-cover.jpg', alt: 'Portfolio slide 7' },
   { src: 'https://i.ibb.co/SDz64vTy/movel-thiago.jpg', alt: 'Portfolio slide 8' },
   { src: 'https://i.ibb.co/1xv9j7W/napkin.jpg', alt: 'Portfolio slide 9' },
   { src: 'https://i.ibb.co/TqNkdt0j/shape-na-medida.jpg', alt: 'Portfolio slide 10' },
