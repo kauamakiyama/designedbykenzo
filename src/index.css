@@ -270,9 +270,9 @@ body.home-fixed {
     line-height: 1.5 !important;
   }
 
-  /* Container de conteúdo das páginas de detalhes - mais padding para baixo */
+  /* Container de conteúdo das páginas de detalhes - espaço suficiente para não ficar atrás do header fixo (70px + 10% de padding vertical) */
   .details-content {
-    padding: 25% 5% 5% 5% !important;
+    padding: calc(70px + 25%) 5% 5% 5% !important;
   }
 }
 
