@@ -95,7 +95,7 @@ export const projects: Project[] = [
       priority: true,
     },
     worksPosition: {
-      top: '14%',
+      top: '102%',
       right: '5%',
       width: '55%',
     },
@@ -169,7 +169,7 @@ export const projects: Project[] = [
       alt: 'VELA project cover',
     },
     worksPosition: {
-      top: '61%',
+      top: '149%',
       right: '5%',
       width: '55%',
     },
@@ -255,7 +255,7 @@ export const projects: Project[] = [
       priority: true,
     },
     worksPosition: {
-      top: '111%',
+      top: '199%',
       right: '5%',
       width: '55%',
     },
@@ -387,6 +387,42 @@ export const projects: Project[] = [
       { type: 'image', src: 'https://i.ibb.co/Rkpp0YFL/2-1.jpg', alt: 'LEVIS - Imagem 5', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
       { type: 'image', src: 'https://i.ibb.co/9mH896Gr/4-1.jpg', alt: 'LEVIS - Imagem 6', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
       { type: 'image', src: 'https://i.ibb.co/JRHm9cx0/7-1.jpg', alt: 'LEVIS - Imagem 7', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+    ],
+  },
+  {
+    slug: 'polo-sport-eyewear',
+    title: 'POLO SPORT EYEWEAR',
+    year: '2026',
+    worksLabel: 'POLO SPORT EYEWEAR / 2026',
+    cover: {
+      src: 'https://i.ibb.co/Qvj5CxKb/posts-ralph-lauren-01.jpg',
+      alt: 'POLO SPORT EYEWEAR project cover',
+    },
+    worksPosition: {
+      top: '14%',
+      right: '5%',
+      width: '55%',
+    },
+    mediaGap: 'clamp(6px, 1.2vw, 20px)',
+    mediaSections: [
+      {
+        type: 'text',
+        spacing: '0 0 4%',
+        paragraphs: [
+          { text: "Experience design developed for the launch of Polo Ralph Lauren's Polo Sport Eyewear collection, inspired by the visual language of Wimbledon." },
+          { text: 'From early sketches to production and installation, the project included display furniture, exhibition objects, a temporary tennis court and spatial design.' },
+          { text: 'Project in collaboration with Agência 1043 and Rodrigo Pazzini. Photography by Nando and Kim.' },
+        ],
+      },
+      { type: 'image', src: 'https://i.ibb.co/Qvj5CxKb/posts-ralph-lauren-01.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 1', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/SwnMbHN1/posts-ralph-lauren-02.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 2', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/JRQsykTT/posts-ralph-lauren-03.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 3', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/JFd51jjJ/posts-ralph-lauren-04.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 4', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/KcHTL9hS/posts-ralph-lauren-05.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 5', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/0VC8C4T6/posts-ralph-lauren-06.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 6', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/GvpJMkTd/posts-ralph-lauren-07.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 7', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/1fr01CXV/posts-ralph-lauren-08.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 8', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      { type: 'image', src: 'https://i.ibb.co/ZzYC8ZbV/posts-ralph-lauren-09.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 9', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
     ],
   },
 ]

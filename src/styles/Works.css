@@ -2,7 +2,8 @@
   position: relative;
   overflow: visible;
   min-height: 56.25vw;
-  margin-bottom: 11.25vw;
+  margin-bottom: 90vw;
+  align-self: flex-start;
 }
 
 .work-item {

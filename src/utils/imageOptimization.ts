@@ -12,7 +12,7 @@ export const getOptimizedImageUrl = (src: string, width = 1920) => {
     if (!OPTIMIZABLE_HOSTS.has(url.hostname)) return src
 
     const target = `${url.hostname}${url.pathname}${url.search}`
-    return `https://wsrv.nl/?url=${encodeURIComponent(target)}&w=${width}&output=webp&q=80`
+    return `https://wsrv.nl/?url=${encodeURIComponent(target)}&w=${width}&output=webp&q=90`
   } catch {
     return src
   }
