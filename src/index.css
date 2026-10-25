@@ -3,6 +3,7 @@
 @import './styles/Home.css';
 @import './styles/Works.css';
 @import './styles/Details.css';
+@import './styles/Products.css';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

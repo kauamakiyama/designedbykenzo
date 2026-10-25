@@ -1,4 +1,4 @@
-export type PageId = 'home' | 'works' | 'about' | 'contact'
+export type PageId = 'home' | 'works' | 'products' | 'about' | 'contact'
 
 export interface NavigationItem {
   id: PageId
@@ -10,6 +10,7 @@ export interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   { id: 'home', label: 'Home', path: '/', showInMenu: false },
   { id: 'works', label: 'Works', path: '/works', showInMenu: true },
+  { id: 'products', label: 'Products', path: '/products', showInMenu: true },
   { id: 'about', label: 'About Me', path: '/about', showInMenu: true },
   { id: 'contact', label: 'Contact', path: '/contact', showInMenu: true },
 ]
@@ -23,6 +24,7 @@ export const getPathForPage = (pageId: PageId) => (
 export const getCurrentPage = (pathname: string): PageId => {
   if (pathname === '/') return 'home'
   if (pathname.startsWith('/works')) return 'works'
+  if (pathname.startsWith('/products')) return 'products'
   if (pathname.startsWith('/about')) return 'about'
   if (pathname.startsWith('/contact')) return 'contact'
   return 'home'

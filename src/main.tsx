@@ -6,6 +6,8 @@ import Works from './pages/Works'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import ProjectDetailPage from './pages/ProjectDetailPage'
+import Products from './pages/Products'
+import ProductDetailPage from './pages/ProductDetailPage'
 import { projects } from './data/projects'
 import './index.css'
 
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: '/works',
     element: <Works/>,
+  },
+  {
+    path: '/products',
+    element: <Products/>,
+  },
+  {
+    path: '/products/:slug',
+    element: <ProductDetailPage/>,
   },
   {
     path: '/about',
