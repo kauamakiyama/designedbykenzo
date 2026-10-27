@@ -114,7 +114,7 @@ body.mobile-menu-open {
   }
 
   .mobile-text-large {
-    font-size: 15vw !important;  /* aumenta a fonte no mobile */
+    font-size: calc(15 * var(--vw)) !important;  /* aumenta a fonte no mobile */
     text-align: left !important; /* centraliza o texto */
     width: 100% !important;        /* garante que ocupe toda a linha */
     margin-bottom: 8%;             /* respiro abaixo do título */

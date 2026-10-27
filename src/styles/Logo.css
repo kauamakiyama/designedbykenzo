@@ -17,17 +17,17 @@
 }
 
 .logo-image {
-  width: 12vw;
+  width: calc(12 * var(--vw));
   height: auto;
 }
 
 .logo-line {
   font-family: 'Arial', sans-serif;
-  font-size: 1.7vw;
+  font-size: calc(1.7 * var(--vw));
   font-weight: 500;
   color: #000000;
   line-height: 1.2;
-  letter-spacing: 0.1vw;
+  letter-spacing: calc(0.1 * var(--vw));
   text-transform: uppercase;
   text-align: left;
 }
@@ -47,18 +47,18 @@
   }
   
   .logo-image {
-    width: 40vw;
+    width: calc(40 * var(--vw));
   }
 
   .mobile-header-logo .logo-image {
-    width: 34vw;
+    width: calc(34 * var(--vw));
   }
 
   /* Logo geral em mobile */
   .logo-line {
-    font-size: 6vw;            /* aumentei de 4.5vw → 6vw */
+    font-size: calc(6 * var(--vw));            /* aumentei de calc(4.5 * var(--vw)) → calc(6 * var(--vw)) */
     text-align: center;
-    letter-spacing: 0.25vw;
+    letter-spacing: calc(0.25 * var(--vw));
   }
 
   /* Estilos para logo no header mobile */
@@ -67,7 +67,7 @@
   }
 
   .mobile-header-logo .logo-line {
-    font-size: 7vw !important; /* aumentei de 4vw → 5vw */
+    font-size: calc(7 * var(--vw)) !important; /* aumentei de calc(4 * var(--vw)) → calc(5 * var(--vw)) */
     text-align: left !important;
   }
 

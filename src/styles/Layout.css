@@ -1,4 +1,6 @@
 .page-shell {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
   min-height: 100vh;
   background-color: #ffffff;
   display: flex;
@@ -29,7 +31,7 @@
 }
 
 .about-title {
-  font-size: 9vw;
+  font-size: calc(9 * var(--vw));
   font-weight: bold;
   color: #000000;
   text-transform: uppercase;
@@ -47,7 +49,7 @@
 }
 
 .language-label {
-  font-size: 0.8vw;
+  font-size: calc(0.8 * var(--vw));
   color: #999999;
   text-align: left;
   max-width: 80%;
@@ -83,7 +85,7 @@
 }
 
 .contact-info {
-  font-size: 1.1vw;
+  font-size: calc(1.1 * var(--vw));
   color: #000000;
   text-align: left;
   font-family: Arial, sans-serif;
