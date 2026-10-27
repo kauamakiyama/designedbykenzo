@@ -1,25 +1,34 @@
 .page-shell {
-  max-width: var(--site-max-width);
-  margin: 0 auto;
   min-height: 100vh;
   background-color: #ffffff;
   display: flex;
 }
 
+/* Wide screens: the sidebar stays on the left edge (same spacing as on a Mac)
+   and the content stops growing, centered in the remaining space */
 .page-content {
   flex: 1;
+  max-width: calc(71 * var(--vw));
+  margin-inline: auto;
   background-color: #ffffff;
 }
 
+/* Total width = 20 + 2 + 7 = 29 units, the rest (71) is .page-content */
 .sidebar-container {
-  width: 20%;
+  width: calc(20 * var(--vw));
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  padding: 2%;
-  margin-top: 5%;
-  padding-left: 7%;
+  padding: calc(2 * var(--vw));
+  margin-top: calc(5 * var(--vw));
+  padding-left: calc(7 * var(--vw));
   height: 100vh;
+}
+
+@media (max-width: 767px) {
+  .page-content {
+    max-width: none;
+  }
 }
 
 .about-container {

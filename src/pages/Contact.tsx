@@ -19,25 +19,24 @@ const contacts = [
   },
 ]
 
-// Lines the first contact up with the CONTACT item of the sidebar menu.
-// The menu position depends on the viewport height, so it is measured at runtime.
+// Centers the contact lines on the ABOUT ME item of the sidebar menu.
+// The menu position depends on the viewport size, so it is measured at runtime.
 const useAlignWithMenu = () => {
   const infoRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     const align = () => {
       const info = infoRef.current
-      const menuItem = document.querySelector<HTMLElement>('.sidebar-menu .nav-item.active')
-      const firstLine = info?.firstElementChild
-      if (!info || !firstLine) return
+      const menuItem = document.querySelector<HTMLElement>('.sidebar-menu [data-page="about"]')
+      if (!info) return
 
       info.style.marginTop = ''
       // Sidebar is hidden on mobile: keep the default layout
       if (!menuItem || menuItem.offsetParent === null) return
 
       const menuRect = menuItem.getBoundingClientRect()
-      const lineRect = firstLine.getBoundingClientRect()
-      const offset = (menuRect.top + menuRect.height / 2) - (lineRect.top + lineRect.height / 2)
+      const infoRect = info.getBoundingClientRect()
+      const offset = (menuRect.top + menuRect.height / 2) - (infoRect.top + infoRect.height / 2)
       info.style.marginTop = `${Math.max(0, offset)}px`
     }
 

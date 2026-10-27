@@ -13,6 +13,7 @@ const Menu: React.FC<MenuProps> = ({ currentPage, onPageChange }) => {
       {menuItems.map((item) => (
         <button
           key={item.id}
+          data-page={item.id}
           className={`nav-item ${currentPage === item.id ? 'active' : ''}`}
           onClick={() => onPageChange(item.id)}
         >
