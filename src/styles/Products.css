@@ -5,7 +5,7 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4vw 2vw;
+  gap: calc(4 * var(--vw)) calc(2 * var(--vw));
 }
 
 .product-card {
@@ -55,9 +55,9 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1vw;
-  margin-top: 0.8vw;
-  font-size: 1vw;
+  gap: var(--vw);
+  margin-top: calc(0.8 * var(--vw));
+  font-size: var(--vw);
   color: #000000;
   text-transform: uppercase;
 }
@@ -76,7 +76,7 @@
 .product-back {
   margin-bottom: 4%;
   font-family: Arial, sans-serif;
-  font-size: 0.9vw;
+  font-size: calc(0.9 * var(--vw));
   font-weight: 400;
   color: #999999;
   text-transform: uppercase;
@@ -90,14 +90,14 @@
   width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 4vw;
+  gap: calc(4 * var(--vw));
   align-items: start;
 }
 
 .product-detail-gallery {
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  gap: calc(2 * var(--vw));
 }
 
 .product-detail-image {
@@ -109,27 +109,27 @@
 
 .product-detail-info {
   position: sticky;
-  top: 5vw;
+  top: calc(5 * var(--vw));
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
 }
 
 .product-detail-title {
-  font-size: 2.6vw;
+  font-size: calc(2.6 * var(--vw));
   margin: 0 0 3%;
 }
 
 .product-detail-price {
   margin: 0 0 6%;
-  font-size: 1.4vw;
+  font-size: calc(1.4 * var(--vw));
   font-weight: 300;
   color: #000000;
 }
 
 .product-detail-summary {
   margin: 0 0 6%;
-  font-size: 1.1vw;
+  font-size: calc(1.1 * var(--vw));
   font-weight: 500;
   color: #000000;
   line-height: 1.6;
@@ -144,9 +144,9 @@
 .product-spec {
   display: flex;
   justify-content: space-between;
-  gap: 1vw;
+  gap: var(--vw);
   padding: 2% 0;
-  font-size: 0.9vw;
+  font-size: calc(0.9 * var(--vw));
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -164,7 +164,7 @@
 
 .product-buy {
   align-self: flex-start;
-  font-size: 1vw;
+  font-size: var(--vw);
   font-weight: 500;
   color: #000000;
   text-transform: uppercase;
@@ -174,6 +174,77 @@
 .product-buy:hover {
   color: #666666;
   border-color: #666666;
+}
+
+/* Numbered editorial sections (02 — System / Construction, ...) */
+.product-section {
+  width: 100%;
+  margin-top: calc(8 * var(--vw));
+  padding-top: calc(2 * var(--vw));
+  border-top: 1px solid #e0e0e0;
+}
+
+.product-section-label {
+  margin: 0 0 calc(2.5 * var(--vw));
+  font-family: Arial, sans-serif;
+  font-size: calc(0.9 * var(--vw));
+  font-weight: 400;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: calc(0.05 * var(--vw));
+}
+
+.product-section-body {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  gap: calc(3 * var(--vw));
+  align-items: start;
+}
+
+.product-section-main {
+  width: 100%;
+  height: auto;
+}
+
+.product-section-side {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2 * var(--vw));
+}
+
+.product-section-specs {
+  font-family: Arial, sans-serif;
+  font-size: var(--vw);
+  color: #000000;
+  line-height: 1.6;
+}
+
+.product-section-specs p {
+  margin: 0;
+}
+
+.product-section-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vw);
+}
+
+.product-section-thumb {
+  width: 100%;
+  height: auto;
+}
+
+/* Grey box shown until the real image is added */
+.product-media-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  font-size: calc(0.9 * var(--vw));
+  color: #999999;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {
@@ -189,25 +260,25 @@
 
   .products-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 8vw;
+    gap: calc(8 * var(--vw));
   }
 
   .product-card-info {
-    margin-top: 2.5vw;
-    font-size: 4vw;
+    margin-top: calc(2.5 * var(--vw));
+    font-size: calc(4 * var(--vw));
   }
 
   .product-back {
-    font-size: 3.5vw;
+    font-size: calc(3.5 * var(--vw));
   }
 
   .product-detail {
     grid-template-columns: minmax(0, 1fr);
-    gap: 6vw;
+    gap: calc(6 * var(--vw));
   }
 
   .product-detail-gallery {
-    gap: 4vw;
+    gap: calc(4 * var(--vw));
   }
 
   .product-detail-info {
@@ -215,22 +286,59 @@
   }
 
   .product-detail-title {
-    font-size: 7vw !important;
+    font-size: calc(7 * var(--vw)) !important;
   }
 
   .product-detail-price {
-    font-size: 5vw;
+    font-size: calc(5 * var(--vw));
   }
 
   .product-detail-summary {
-    font-size: 4.5vw;
+    font-size: calc(4.5 * var(--vw));
   }
 
   .product-spec {
-    font-size: 3.8vw;
+    font-size: calc(3.8 * var(--vw));
   }
 
   .product-buy {
-    font-size: 4.2vw;
+    font-size: calc(4.2 * var(--vw));
+  }
+
+  .product-section {
+    margin-top: calc(12 * var(--vw));
+    padding-top: calc(4 * var(--vw));
+  }
+
+  .product-section-label {
+    font-size: calc(3.5 * var(--vw));
+    margin-bottom: calc(4 * var(--vw));
+  }
+
+  .product-section-body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(5 * var(--vw));
+  }
+
+  .product-section-side {
+    gap: calc(4 * var(--vw));
+  }
+
+  .product-section-specs {
+    font-size: calc(4 * var(--vw));
+  }
+
+  .product-section-secondary {
+    flex-direction: row;
+    gap: calc(3 * var(--vw));
+  }
+
+  .product-section-secondary > * {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .product-media-placeholder {
+    font-size: calc(3.2 * var(--vw));
   }
 }

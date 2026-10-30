@@ -1,7 +1,76 @@
 import { Link, useParams } from 'react-router-dom'
 import PageShell from '../components/PageShell'
 import OptimizedImage from '../components/OptimizedImage'
-import { findProductBySlug } from '../data/products'
+import {
+  findProductBySlug,
+  type ProductMedia,
+  type ProductSection,
+} from '../data/products'
+
+interface MediaSlotProps {
+  media: ProductMedia
+  className: string
+  width: number
+}
+
+// Shows the image, or a labelled grey box while the image is not ready yet
+const MediaSlot = ({ media, className, width }: MediaSlotProps) => (
+  media.image ? (
+    <OptimizedImage
+      src={media.image.src}
+      alt={media.image.alt}
+      className={className}
+      width={width}
+    />
+  ) : (
+    <div className={`${className} product-media-placeholder`}>
+      <span>{media.placeholder}</span>
+    </div>
+  )
+)
+
+const SectionBlock = ({ section }: { section: ProductSection }) => (
+  <section className="product-section">
+    <h2 className="product-section-label">
+      {section.number} — {section.title}
+    </h2>
+
+    <div className="product-section-body">
+      <MediaSlot media={section.main} className="product-section-main" width={1800} />
+
+      <div className="product-section-side">
+        {section.text && (
+          <div className="details-text">
+            {section.text.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        )}
+
+        {section.specs && (
+          <div className="product-section-specs">
+            {section.specs.map((spec) => (
+              <p key={spec}>{spec}</p>
+            ))}
+          </div>
+        )}
+
+        {section.secondary && (
+          <div className="product-section-secondary">
+            {section.secondary.map((media, index) => (
+              <MediaSlot
+                key={media.image?.src ?? `${media.placeholder}-${index}`}
+                media={media}
+                className="product-section-thumb"
+                width={900}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)
 
 const ProductDetailPage = () => {
   const { slug } = useParams()
@@ -60,6 +129,10 @@ const ProductDetailPage = () => {
           </Link>
         </aside>
       </div>
+
+      {product.sections?.map((section) => (
+        <SectionBlock key={section.number} section={section} />
+      ))}
     </PageShell>
   )
 }
