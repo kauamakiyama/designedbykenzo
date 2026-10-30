@@ -143,6 +143,8 @@ body.home-fixed {
     height: 50vh !important;
     margin-right: 0 !important;
     object-fit: contain !important;
+    /* Desce a foto em relação ao centro da tela (20% da altura da foto) */
+    transform: translateY(20%);
   }
   
   /* Indicadores do carrossel */
