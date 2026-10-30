@@ -122,10 +122,20 @@ body.home-fixed {
     margin-right: 0 !important;
   }
 
+  /* Home: a página ocupa a tela inteira e a foto fica no centro dela */
+  .main-container.home-page {
+    height: 100dvh !important;
+    min-height: 0;
+    padding-top: 0 !important;
+  }
+
   /* Carrossel na página Home */
   .carousel-container {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
     padding: 4% !important;
-    height: 60vh !important;
+    height: 100% !important;
   }
   
   .carousel-image {
