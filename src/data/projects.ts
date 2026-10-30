@@ -441,6 +441,11 @@ export const homeCarouselImages: ProjectImage[] = [
   { src: 'https://i.ibb.co/G38DJzC0/Skateboard-Mockup-mlks-2.jpg', alt: 'Portfolio slide 11' },
   { src: 'https://i.ibb.co/Mvcw9Qj/suzuki-peitas-na-medida.jpg', alt: 'Portfolio slide 12' },
   { src: 'https://i.ibb.co/VpH4hQdg/vinil-to-vni-na-medida.jpg', alt: 'Portfolio slide 13' },
+  { src: 'https://i.ibb.co/MkqfNXtD/display-oculos-1.jpg', alt: 'Portfolio slide 14' },
+  { src: 'https://i.ibb.co/C5cGz0fZ/Cenografia-Arranjos-RL-1.jpg', alt: 'Portfolio slide 15' },
+  { src: 'https://i.ibb.co/RTqWT1xS/2.png', alt: 'Portfolio slide 16' },
+  { src: 'https://i.ibb.co/wrdFZJs6/tudo-tudo.png', alt: 'Portfolio slide 17' },
+  { src: 'https://i.ibb.co/cXbBKVTg/9-DSC07728.jpg', alt: 'Portfolio slide 18' },
 ]
 
 export const findProjectBySlug = (slug?: string) => (

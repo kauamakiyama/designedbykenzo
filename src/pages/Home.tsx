@@ -27,7 +27,7 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) => (
         prevIndex === homeCarouselImages.length - 1 ? 0 : prevIndex + 1
       ))
-    }, 1600)
+    }, 1200)
 
     return () => clearInterval(interval)
   }, [])
