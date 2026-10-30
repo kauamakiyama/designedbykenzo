@@ -56,17 +56,6 @@ const Home = () => {
           height: currentImage.src.includes('IMG-9597') ? '75%' : '70%',
         }}
       />
-
-      <div className="carousel-indicators">
-        {homeCarouselImages.map((image, index) => (
-          <button
-            key={image.src}
-            onClick={() => setCurrentImageIndex(index)}
-            className={`carousel-indicator ${index === currentImageIndex ? 'is-active' : ''}`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </PageShell>
   )
 }

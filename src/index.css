@@ -143,21 +143,10 @@ body.home-fixed {
     height: 50dvh !important;
     margin-right: 0 !important;
     object-fit: contain !important;
-    /* Desce a foto em relação ao centro da tela (50% da altura da foto) */
-    transform: translateY(50%);
+    /* Desce a foto em relação ao centro da tela (20% da altura da foto) */
+    transform: translateY(20%);
   }
   
-  /* Indicadores do carrossel */
-  .carousel-indicators {
-    bottom: 5% !important;
-    gap: 2% !important;
-  }
-  
-  .carousel-indicator {
-    width: calc(3 * var(--vw)) !important;
-    height: calc(3 * var(--vw)) !important;
-  }
-
   /* Páginas de trabalhos */
   .works-grid {
     display: flex !important;
