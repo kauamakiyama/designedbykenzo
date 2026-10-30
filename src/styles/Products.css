@@ -66,11 +66,6 @@
   font-weight: 500;
 }
 
-.product-card-price {
-  font-weight: 300;
-  color: #666666;
-  white-space: nowrap;
-}
 
 /* Product detail page */
 .product-back {
@@ -117,15 +112,9 @@
 
 .product-detail-title {
   font-size: calc(2.6 * var(--vw));
-  margin: 0 0 3%;
+  margin: 0 0 6%;
 }
 
-.product-detail-price {
-  margin: 0 0 6%;
-  font-size: calc(1.4 * var(--vw));
-  font-weight: 300;
-  color: #000000;
-}
 
 .product-detail-summary {
   margin: 0 0 6%;
@@ -289,9 +278,6 @@
     font-size: calc(7 * var(--vw)) !important;
   }
 
-  .product-detail-price {
-    font-size: calc(5 * var(--vw));
-  }
 
   .product-detail-summary {
     font-size: calc(4.5 * var(--vw));

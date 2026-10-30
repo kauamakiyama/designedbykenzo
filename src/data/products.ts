@@ -24,7 +24,6 @@ export interface ProductSection {
 export interface Product {
   slug: string
   name: string
-  price: string
   summary: string
   description: string[]
   specs: ProductSpec[]
@@ -37,7 +36,6 @@ export const products: Product[] = [
   {
     slug: 'trilho',
     name: 'Trilho',
-    price: 'On request',
     summary: 'A bench built from solid timber beams and extruded aluminium profiles.',
     description: [
       'Three timber beams rest on stacked aluminium extrusions: standard, existing components, repeated rather than redesigned.',

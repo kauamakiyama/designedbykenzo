@@ -28,7 +28,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
       <span className="product-card-info">
         <span className="product-card-name">{product.name}</span>
-        <span className="product-card-price">{product.price}</span>
       </span>
     </button>
   )

@@ -7,6 +7,13 @@ import {
   type ProductSection,
 } from '../data/products'
 
+const WHATSAPP_NUMBER = '5511999257319'
+
+// Opens a WhatsApp chat with a ready-to-send message about the product
+const getWhatsappUrl = (productName: string) => (
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi! I'm interested in ${productName}.`)}`
+)
+
 interface MediaSlotProps {
   media: ProductMedia
   className: string
@@ -106,7 +113,6 @@ const ProductDetailPage = () => {
 
         <aside className="product-detail-info">
           <h1 className="details-title product-detail-title">{product.name}</h1>
-          <p className="product-detail-price">{product.price}</p>
           <p className="product-detail-summary">{product.summary}</p>
 
           <div className="details-text">
@@ -124,9 +130,14 @@ const ProductDetailPage = () => {
             ))}
           </dl>
 
-          <Link to="/contact" className="product-buy">
+          <a
+            href={getWhatsappUrl(product.name)}
+            className="product-buy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Get in touch to buy
-          </Link>
+          </a>
         </aside>
       </div>
 
