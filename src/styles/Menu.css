@@ -21,11 +21,11 @@
   background: none;
   border: none;
   font-family: 'Arial', sans-serif;
-  font-size: 1.6vw;
+  font-size: calc(1.6 * var(--vw));
   font-weight: 500;
   color: #000000;
   text-transform: uppercase;
-  letter-spacing: 0.05vw;
+  letter-spacing: calc(0.05 * var(--vw));
   text-align: left;
   padding: 0;
   cursor: pointer;
@@ -53,9 +53,9 @@
   content: '';
   position: absolute;
   left: 0;
-  bottom: -0.5vw;
-  width: 2vw;
-  height: 0.2vw;
+  bottom: calc(-0.5 * var(--vw));
+  width: calc(2 * var(--vw));
+  height: calc(0.2 * var(--vw));
   background-color: #000000;
 }
 
@@ -93,17 +93,17 @@
   }
   
   .nav-item {
-    font-size: 4vw;
+    font-size: calc(4 * var(--vw));
     margin-bottom: 5%;
     margin-left: 0;
     text-align: center;
-    padding: 2vw;
+    padding: calc(2 * var(--vw));
   }
   
   .nav-item.active::after {
-    bottom: -1vw;
-    width: 4vw;
-    height: 0.5vw;
+    bottom: calc(-1 * var(--vw));
+    width: calc(4 * var(--vw));
+    height: calc(0.5 * var(--vw));
     left: 50%;
     transform: translateX(-50%);
   }
@@ -123,7 +123,7 @@
   }
 
   .mobile-menu-navigation .nav-item {
-    font-size: 5vw !important;
+    font-size: calc(5 * var(--vw)) !important;
     text-align: center !important;
     padding: 10px 0 !important;
     margin: 0 !important;
