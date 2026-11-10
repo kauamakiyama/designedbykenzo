@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import PageShell from '../components/PageShell'
 import OptimizedImage from '../components/OptimizedImage'
 import {
   findProductBySlug,
   type ProductMedia,
+  type ProductOption,
   type ProductSection,
 } from '../data/products'
 
@@ -12,6 +14,33 @@ const WHATSAPP_NUMBER = '5511999257319'
 // Opens a WhatsApp chat with a ready-to-send message about the product
 const getWhatsappUrl = (productName: string) => (
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi! I'm interested in ${productName}.`)}`
+)
+
+interface OptionPickerProps {
+  label: string
+  options: ProductOption[]
+  selected: string
+  onSelect: (id: string) => void
+}
+
+const OptionPicker = ({ label, options, selected, onSelect }: OptionPickerProps) => (
+  <div className="product-option">
+    <span className="product-option-label">{label}</span>
+    <div className="product-option-buttons" role="radiogroup" aria-label={label}>
+      {options.map((option) => (
+        <button
+          key={option.id}
+          type="button"
+          role="radio"
+          aria-checked={option.id === selected}
+          className={`product-option-button${option.id === selected ? ' is-selected' : ''}`}
+          onClick={() => onSelect(option.id)}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  </div>
 )
 
 interface MediaSlotProps {
@@ -82,6 +111,8 @@ const SectionBlock = ({ section }: { section: ProductSection }) => (
 const ProductDetailPage = () => {
   const { slug } = useParams()
   const product = findProductBySlug(slug)
+  const [sizeId, setSizeId] = useState<string>()
+  const [colorId, setColorId] = useState<string>()
 
   if (!product) {
     return (
@@ -91,6 +122,24 @@ const ProductDetailPage = () => {
     )
   }
 
+  const { variants } = product
+  // Defaults to the largest size in the first colour, matching the cover photo
+  const size = variants && (
+    variants.sizes.find((option) => option.id === sizeId) ?? variants.sizes[variants.sizes.length - 1]
+  )
+  const color = variants && (
+    variants.colors.find((option) => option.id === colorId) ?? variants.colors[0]
+  )
+  const images = variants && size && color
+    ? variants.views(size.id, color.id)
+    : [product.cover, ...product.gallery]
+  const specs = size
+    ? [{ label: 'Dimensions', value: size.dimensions ?? 'On request' }, ...product.specs]
+    : product.specs
+  const orderName = size && color
+    ? `${product.name} (size ${size.label}, ${color.label.toLowerCase()})`
+    : product.name
+
   return (
     <PageShell contentClassName="details-content">
       <Link to="/products" className="product-back">
@@ -99,12 +148,12 @@ const ProductDetailPage = () => {
 
       <div className="product-detail">
         <div className="product-detail-gallery">
-          {[product.cover, ...product.gallery].map((image, index) => (
+          {images.map((image, index) => (
             <OptimizedImage
               key={`${image.src}-${index}`}
               src={image.src}
               alt={image.alt}
-              className="product-detail-image"
+              className={`product-detail-image${variants ? ' product-detail-image--view' : ''}`}
               priority={index === 0}
               width={1600}
             />
@@ -121,8 +170,15 @@ const ProductDetailPage = () => {
             ))}
           </div>
 
+          {variants && size && color && (
+            <div className="product-options">
+              <OptionPicker label="Size" options={variants.sizes} selected={size.id} onSelect={setSizeId} />
+              <OptionPicker label="Colour" options={variants.colors} selected={color.id} onSelect={setColorId} />
+            </div>
+          )}
+
           <dl className="product-specs">
-            {product.specs.map((spec) => (
+            {specs.map((spec) => (
               <div key={spec.label} className="product-spec">
                 <dt>{spec.label}</dt>
                 <dd>{spec.value}</dd>
@@ -131,7 +187,7 @@ const ProductDetailPage = () => {
           </dl>
 
           <a
-            href={getWhatsappUrl(product.name)}
+            href={getWhatsappUrl(orderName)}
             className="product-buy"
             target="_blank"
             rel="noopener noreferrer"

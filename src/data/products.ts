@@ -21,6 +21,23 @@ export interface ProductSection {
   secondary?: ProductMedia[]
 }
 
+export interface ProductOption {
+  id: string
+  label: string
+}
+
+export interface ProductSize extends ProductOption {
+  // Without dimensions, the size is shown as "On request"
+  dimensions?: string
+}
+
+// Size × colour picker; each combination has its own set of views
+export interface ProductVariants {
+  sizes: ProductSize[]
+  colors: ProductOption[]
+  views: (size: string, color: string) => ProjectImage[]
+}
+
 export interface Product {
   slug: string
   name: string
@@ -29,8 +46,12 @@ export interface Product {
   specs: ProductSpec[]
   cover: ProjectImage
   gallery: ProjectImage[]
+  variants?: ProductVariants
   sections?: ProductSection[]
 }
+
+const TRILHO_SIZE_NAMES: Record<string, string> = { p: 'small', m: 'medium', g: 'large' }
+const TRILHO_COLOR_NAMES: Record<string, string> = { verde: 'green', azul: 'blue', laranja: 'orange' }
 
 export const products: Product[] = [
   {
@@ -40,13 +61,29 @@ export const products: Product[] = [
     description: [
       'Three timber beams rest on stacked aluminium extrusions: standard, existing components, repeated rather than redesigned.',
     ],
+    // Dimensions come from the selected size (see `variants`)
     specs: [
-      { label: 'Dimensions', value: '2500 × 340 × 400 mm' },
       { label: 'Materials', value: 'Solid timber / extruded aluminium' },
       { label: 'Finish', value: 'Stained timber' },
     ],
     cover: { src: '/images/products/trilho-verde.jpg', alt: 'Trilho bench in green stained timber', priority: true },
     gallery: [],
+    variants: {
+      sizes: [
+        { id: 'p', label: 'S', dimensions: '500 × 340 × 400 mm' },
+        { id: 'm', label: 'M', dimensions: '1500 × 340 × 400 mm' },
+        { id: 'g', label: 'L', dimensions: '2500 × 340 × 400 mm' },
+      ],
+      colors: [
+        { id: 'verde', label: 'Green' },
+        { id: 'azul', label: 'Blue' },
+        { id: 'laranja', label: 'Orange' },
+      ],
+      views: (size, color) => ['perspectiva', 'frontal'].map((view) => ({
+        src: `/images/products/trilho/${size}-${color}-${view}.jpg`,
+        alt: `Trilho ${TRILHO_SIZE_NAMES[size]} bench in ${TRILHO_COLOR_NAMES[color]} stained timber, ${view === 'frontal' ? 'front' : 'perspective'} view`,
+      })),
+    },
     sections: [
       {
         number: '02',
@@ -61,8 +98,8 @@ export const products: Product[] = [
         number: '03',
         title: 'Scale / Variations',
         main: { placeholder: 'Three sizes' },
-        specs: ['2500 × 340 × 400 mm', 'Solid timber / extruded aluminium'],
-        text: ['The same system adapts to different lengths. Additional sizes coming soon.'],
+        specs: ['S — 500 × 340 × 400 mm', 'M — 1500 × 340 × 400 mm', 'L — 2500 × 340 × 400 mm', 'Solid timber / extruded aluminium'],
+        text: ['The same system adapts to different lengths: three sizes, one height and depth.'],
         secondary: [{ placeholder: 'Technical drawing' }],
       },
       {

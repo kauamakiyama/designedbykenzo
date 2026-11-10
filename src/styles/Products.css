@@ -102,6 +102,71 @@
   background-color: #f5f5f5;
 }
 
+/* Variant renders are wide, on white: show them whole instead of cropping to 4:5 */
+.product-detail-image--view {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+.product-options {
+  display: flex;
+  flex-direction: column;
+  gap: calc(1.2 * var(--vw));
+  margin-top: 2%;
+}
+
+.product-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--vw);
+}
+
+.product-option-label {
+  font-size: calc(0.9 * var(--vw));
+  color: #999999;
+  text-transform: uppercase;
+}
+
+.product-option-buttons {
+  display: flex;
+  gap: calc(1.2 * var(--vw));
+}
+
+.product-option-button {
+  padding: 0 0 2px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: none;
+  appearance: none;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: calc(0.9 * var(--vw));
+  color: #999999;
+  text-transform: uppercase;
+}
+
+.product-option-button:hover,
+.product-option-button.is-selected {
+  color: #000000;
+}
+
+.product-option-button.is-selected {
+  border-bottom-color: #000000;
+}
+
+.product-option-button:focus {
+  outline: none;
+}
+
+.product-option-button:focus-visible {
+  outline: 1px solid #000000;
+  outline-offset: 2px;
+}
+
 .product-detail-info {
   position: sticky;
   top: calc(5 * var(--vw));
@@ -285,6 +350,19 @@
 
   .product-spec {
     font-size: calc(3.8 * var(--vw));
+  }
+
+  .product-options {
+    gap: calc(4 * var(--vw));
+  }
+
+  .product-option-label,
+  .product-option-button {
+    font-size: calc(3.8 * var(--vw));
+  }
+
+  .product-option-buttons {
+    gap: calc(5 * var(--vw));
   }
 
   .product-buy {
