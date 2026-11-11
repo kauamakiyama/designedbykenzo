@@ -53,7 +53,7 @@ const Home = () => {
         priority
         width={CAROUSEL_IMAGE_WIDTH}
         style={{
-          height: currentImage.src.includes('IMG-9597') ? '75%' : '70%',
+          height: '85%',
         }}
       />
     </PageShell>
