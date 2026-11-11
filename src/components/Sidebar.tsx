@@ -25,8 +25,8 @@ const useCenterMenu = () => {
       if (!items.length) return;
       const textTop = items[0].getBoundingClientRect().top;
       const textBottom = items[items.length - 1].getBoundingClientRect().bottom;
-      // Page coordinates, so the result is the same even when the page is scrolled
-      const textCenter = (textTop + textBottom) / 2 + window.scrollY;
+      // The sidebar is sticky, so viewport coordinates stay the same when the page is scrolled
+      const textCenter = (textTop + textBottom) / 2;
       menu.style.transform = `translateY(${window.innerHeight / 2 - textCenter}px)`;
     };
 

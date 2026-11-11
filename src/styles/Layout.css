@@ -24,6 +24,10 @@
   margin-top: calc(5 * var(--vw));
   padding-left: calc(3 * var(--vw));
   height: 100vh;
+  /* Fica parada na tela quando a página rola (top igual à margem: não mexe no lugar inicial) */
+  position: sticky;
+  top: calc(5 * var(--vw));
+  align-self: flex-start;
 }
 
 @media (max-width: 767px) {
