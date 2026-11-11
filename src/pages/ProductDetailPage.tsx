@@ -65,48 +65,60 @@ const MediaSlot = ({ media, className, width }: MediaSlotProps) => (
   )
 )
 
-const SectionBlock = ({ section }: { section: ProductSection }) => (
-  <section className="product-section">
-    <h2 className="product-section-label">
-      {section.number} — {section.title}
-    </h2>
+interface SectionBlockProps {
+  section: ProductSection
+  sizeId?: string
+  colorId?: string
+}
 
-    <div className="product-section-body">
-      <MediaSlot media={section.main} className="product-section-main" width={1800} />
+const SectionBlock = ({ section, sizeId, colorId }: SectionBlockProps) => {
+  const variantImage = sizeId && colorId ? section.variantMain?.(sizeId, colorId) : undefined
+  const main = variantImage ? { image: variantImage } : section.main
+  const secondary = (sizeId && colorId && section.variantSecondary?.(sizeId, colorId)) || section.secondary
 
-      <div className="product-section-side">
-        {section.text && (
-          <div className="details-text">
-            {section.text.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        )}
+  return (
+    <section className="product-section">
+      <h2 className="product-section-label">
+        {section.number} — {section.title}
+      </h2>
 
-        {section.specs && (
-          <div className="product-section-specs">
-            {section.specs.map((spec) => (
-              <p key={spec}>{spec}</p>
-            ))}
-          </div>
-        )}
+      <div className="product-section-body">
+        <MediaSlot media={main} className="product-section-main" width={1800} />
 
-        {section.secondary && (
-          <div className="product-section-secondary">
-            {section.secondary.map((media, index) => (
-              <MediaSlot
-                key={media.image?.src ?? `${media.placeholder}-${index}`}
-                media={media}
-                className="product-section-thumb"
-                width={900}
-              />
-            ))}
-          </div>
-        )}
+        <div className="product-section-side">
+          {section.text && (
+            <div className="details-text">
+              {section.text.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+
+          {section.specs && (
+            <div className="product-section-specs">
+              {section.specs.map((spec) => (
+                <p key={spec}>{spec}</p>
+              ))}
+            </div>
+          )}
+
+          {secondary && (
+            <div className="product-section-secondary">
+              {secondary.map((media, index) => (
+                <MediaSlot
+                  key={media.image?.src ?? `${media.placeholder}-${index}`}
+                  media={media}
+                  className="product-section-thumb"
+                  width={900}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 const ProductDetailPage = () => {
   const { slug } = useParams()
@@ -148,13 +160,31 @@ const ProductDetailPage = () => {
 
       <div className="product-detail">
         <div className="product-detail-gallery">
-          {images.map((image, index) => (
+          {images.map((image, index) => {
+            const img = (
+              <OptimizedImage
+                key={`${image.src}-${index}`}
+                src={image.src}
+                alt={image.alt}
+                className={`product-detail-image${variants ? ' product-detail-image--view' : ''}`}
+                priority={index === 0}
+                width={1600}
+                style={size?.zoom ? { transform: `scale(${size.zoom})` } : undefined}
+              />
+            )
+
+            // The frame crops the zoomed render back to its original box
+            return variants ? (
+              <div key={`${image.src}-${index}`} className="product-detail-frame">{img}</div>
+            ) : img
+          })}
+
+          {variants && size && color && variants.extras?.(size.id, color.id).map((image) => (
             <OptimizedImage
-              key={`${image.src}-${index}`}
+              key={image.src}
               src={image.src}
               alt={image.alt}
-              className={`product-detail-image${variants ? ' product-detail-image--view' : ''}`}
-              priority={index === 0}
+              className="product-detail-image product-detail-image--view"
               width={1600}
             />
           ))}
@@ -198,7 +228,7 @@ const ProductDetailPage = () => {
       </div>
 
       {product.sections?.map((section) => (
-        <SectionBlock key={section.number} section={section} />
+        <SectionBlock key={section.number} section={section} sizeId={size?.id} colorId={color?.id} />
       ))}
     </PageShell>
   )

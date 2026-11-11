@@ -108,6 +108,12 @@
   height: auto;
   object-fit: contain;
   background-color: transparent;
+  /* Zoom (set per size) grows from where the bench sits in the render */
+  transform-origin: 50% 55%;
+}
+
+.product-detail-frame {
+  overflow: hidden;
 }
 
 .product-options {
@@ -252,18 +258,26 @@
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
   gap: calc(3 * var(--vw));
-  align-items: start;
+  /* The side column takes the main image's height so both line up top and bottom */
+  align-items: stretch;
 }
 
+/* Fills the row's height, so it ends level with the side column; the extra is cropped */
 .product-section-main {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product-section-side {
   display: flex;
   flex-direction: column;
   gap: calc(2 * var(--vw));
+}
+
+/* Cancels the line-height space above the first line, so the text starts at the image's top edge */
+.product-section-side > .details-text {
+  margin-top: -0.4em;
 }
 
 .product-section-specs {
@@ -281,11 +295,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--vw);
+  /* Pushes the thumbnails down so the last one ends on the image's bottom edge */
+  margin-top: auto;
 }
 
+/* Same box for every thumbnail (the landscape renders' 16:10); taller photos are cropped around the bench */
 .product-section-thumb {
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 50% 62%;
 }
 
 /* Grey box shown until the real image is added */

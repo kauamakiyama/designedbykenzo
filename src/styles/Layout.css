@@ -8,20 +8,21 @@
    and the content stops growing, centered in the remaining space */
 .page-content {
   flex: 1;
-  max-width: calc(71 * var(--vw));
+  max-width: calc(79 * var(--vw));
   margin-inline: auto;
   background-color: #ffffff;
 }
 
-/* Total width = 20 + 2 + 7 = 29 units, the rest (71) is .page-content */
+/* Total width = 16 + 2 + 3 = 21 units, the rest (79) is .page-content.
+   Logo and menu both start at the 3-unit left padding */
 .sidebar-container {
-  width: calc(20 * var(--vw));
+  width: calc(16 * var(--vw));
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   padding: calc(2 * var(--vw));
   margin-top: calc(5 * var(--vw));
-  padding-left: calc(7 * var(--vw));
+  padding-left: calc(3 * var(--vw));
   height: 100vh;
 }
 
