@@ -435,7 +435,6 @@ export const homeCarouselImages: ProjectImage[] = [
   { src: 'https://i.ibb.co/YBjRfQ5k/hn-bag-na-medida.jpg', alt: 'Portfolio slide 5' },
   { src: 'https://i.ibb.co/Z1wkCJmM/hn-peitas-na-medida.jpg', alt: 'Portfolio slide 6' },
   { src: '/images/vento-cover.jpg', alt: 'Portfolio slide 7' },
-  { src: 'https://i.ibb.co/1xv9j7W/napkin.jpg', alt: 'Portfolio slide 9' },
   { src: 'https://i.ibb.co/TqNkdt0j/shape-na-medida.jpg', alt: 'Portfolio slide 10' },
   { src: 'https://i.ibb.co/Mvcw9Qj/suzuki-peitas-na-medida.jpg', alt: 'Portfolio slide 11' },
   { src: 'https://i.ibb.co/VpH4hQdg/vinil-to-vni-na-medida.jpg', alt: 'Portfolio slide 12' },
