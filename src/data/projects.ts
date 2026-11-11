@@ -435,7 +435,6 @@ export const homeCarouselImages: ProjectImage[] = [
   { src: 'https://i.ibb.co/YBjRfQ5k/hn-bag-na-medida.jpg', alt: 'Portfolio slide 5' },
   { src: 'https://i.ibb.co/Z1wkCJmM/hn-peitas-na-medida.jpg', alt: 'Portfolio slide 6' },
   { src: '/images/vento-cover.jpg', alt: 'Portfolio slide 7' },
-  { src: 'https://i.ibb.co/SDz64vTy/movel-thiago.jpg', alt: 'Portfolio slide 8' },
   { src: 'https://i.ibb.co/1xv9j7W/napkin.jpg', alt: 'Portfolio slide 9' },
   { src: 'https://i.ibb.co/TqNkdt0j/shape-na-medida.jpg', alt: 'Portfolio slide 10' },
   { src: 'https://i.ibb.co/Mvcw9Qj/suzuki-peitas-na-medida.jpg', alt: 'Portfolio slide 11' },
@@ -445,6 +444,7 @@ export const homeCarouselImages: ProjectImage[] = [
   { src: 'https://i.ibb.co/RTqWT1xS/2.png', alt: 'Portfolio slide 15' },
   { src: 'https://i.ibb.co/wrdFZJs6/tudo-tudo.png', alt: 'Portfolio slide 16' },
   { src: 'https://i.ibb.co/cXbBKVTg/9-DSC07728.jpg', alt: 'Portfolio slide 17' },
+  { src: '/images/carrinho-madeira.jpg', alt: 'Portfolio slide 18' },
 ]
 
 export const findProjectBySlug = (slug?: string) => (
