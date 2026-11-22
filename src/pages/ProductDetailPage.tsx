@@ -135,9 +135,9 @@ const ProductDetailPage = () => {
   }
 
   const { variants } = product
-  // Defaults to the largest size in the first colour, matching the cover photo
+  // Defaults to the smallest size in the first colour
   const size = variants && (
-    variants.sizes.find((option) => option.id === sizeId) ?? variants.sizes[variants.sizes.length - 1]
+    variants.sizes.find((option) => option.id === sizeId) ?? variants.sizes[0]
   )
   const color = variants && (
     variants.colors.find((option) => option.id === colorId) ?? variants.colors[0]
