@@ -1,8 +1,7 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import Logo from './Logo';
 import Menu from './Menu';
 import MobileHeader from './MobileHeader';
-import MobileMenuOverlay from './MobileMenuOverlay';
 import useSiteNavigation from '../hooks/useSiteNavigation';
 
 // Moves the menu so its text is centered on the first screen of the page, the same
@@ -39,34 +38,13 @@ const useCenterMenu = () => {
 };
 
 const Sidebar: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { currentPage, goToPage } = useSiteNavigation();
   const menuRef = useCenterMenu();
-
-  const handleMobileMenuToggle = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const handleMobileMenuClose = () => {
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <>
       {/* Header Mobile */}
-      <MobileHeader 
-        onPageChange={goToPage}
-        onMenuToggle={handleMobileMenuToggle}
-        isMenuOpen={isMobileMenuOpen}
-      />
-
-      {/* Menu Overlay Mobile */}
-      <MobileMenuOverlay 
-        isOpen={isMobileMenuOpen}
-        currentPage={currentPage}
-        onPageChange={goToPage}
-        onClose={handleMobileMenuClose}
-      />
+      <MobileHeader currentPage={currentPage} onPageChange={goToPage} />
 
       {/* Sidebar Desktop */}
       <div className="sidebar-container">

@@ -107,35 +107,4 @@
     left: 50%;
     transform: translateX(-50%);
   }
-
-  /* Estilos para menu mobile overlay */
-  .mobile-menu-navigation {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .mobile-menu-navigation .navigation {
-    flex-direction: column !important;
-    gap: 20px !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-
-  .mobile-menu-navigation .nav-item {
-    font-size: calc(5 * var(--vw)) !important;
-    text-align: center !important;
-    padding: 10px 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-    border-bottom: 1px solid #eeeeee !important;
-  }
-
-  .mobile-menu-navigation .nav-item:last-child {
-    border-bottom: none !important;
-  }
-
-  .mobile-menu-navigation .nav-item.active::after {
-    display: none !important;
-  }
 }
