@@ -38,6 +38,20 @@ const renderMediaItem = (item: MediaItem, index: number) => {
           }}
         />
       )
+    case 'imagePair':
+      return (
+        <div className="details-image-pair" style={item.style}>
+          {item.images.map((image) => (
+            <OptimizedImage
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              priority={image.priority}
+              className="details-media-image"
+            />
+          ))}
+        </div>
+      )
     case 'video':
       return (
         <video

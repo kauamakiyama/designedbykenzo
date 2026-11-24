@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react'
 
 export type MediaItem =
   | ImageMediaItem
+  | ImagePairMediaItem
   | VideoMediaItem
   | YoutubeMediaItem
   | SketchfabMediaItem
@@ -44,6 +45,12 @@ export interface ImageMediaItem extends BaseMediaItem {
   alt: string
   priority?: boolean
   fit?: 'contain' | 'cover'
+  style?: CSSProperties
+}
+
+export interface ImagePairMediaItem extends BaseMediaItem {
+  type: 'imagePair'
+  images: [ProjectImage, ProjectImage]
   style?: CSSProperties
 }
 
@@ -219,7 +226,7 @@ export const projects: Project[] = [
       alt: 'QUADRO CREATIONS X REALTREE project cover',
     },
     worksPosition: {
-      top: '14%',
+      top: '74%',
       left: '5%',
       width: '34%',
     },
@@ -313,7 +320,7 @@ export const projects: Project[] = [
       alt: 'CADEIRA BAIXA project cover',
     },
     worksPosition: {
-      top: '130%',
+      top: '190%',
       left: '5%',
       width: '34%',
     },
@@ -365,7 +372,7 @@ export const projects: Project[] = [
       alt: 'LEVIS project cover',
     },
     worksPosition: {
-      top: '72%',
+      top: '132%',
       left: '5%',
       width: '34%',
     },
@@ -423,6 +430,56 @@ export const projects: Project[] = [
       { type: 'image', src: 'https://i.ibb.co/GvpJMkTd/posts-ralph-lauren-07.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 7', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
       { type: 'image', src: 'https://i.ibb.co/1fr01CXV/posts-ralph-lauren-08.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 8', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
       { type: 'image', src: 'https://i.ibb.co/ZzYC8ZbV/posts-ralph-lauren-09.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 9', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+    ],
+  },
+  {
+    slug: 'acrylic-coffee-table',
+    title: 'ACRYLIC COFFEE TABLE',
+    year: '2026',
+    worksLabel: 'ACRYLIC COFFEE TABLE / 2026',
+    cover: {
+      src: '/images/acrylic-coffee-table/03-double-left.jpg',
+      alt: 'ACRYLIC COFFEE TABLE project cover',
+      priority: true,
+    },
+    worksPosition: {
+      top: '14%',
+      left: '5%',
+      width: '34%',
+    },
+    mediaGap: 'clamp(6px, 1.2vw, 20px)',
+    mediaSections: [
+      {
+        type: 'text',
+        spacing: '0 0 4%',
+        paragraphs: [
+          { text: 'A one-off coffee table, designed and made as a single piece for a private commission.' },
+          { text: 'Built from 10 mm cast acrylic in a translucent ruby red, the table is shaped by soft, organic curves, each bend drawn with a 5 cm radius. The piece was entirely hand-bent, one fold at a time.' },
+          { text: 'Its structure is divided into two spaces: a side pocket on the left that holds magazines and books, and an open niche beneath the top for books and decorative objects. The parts are joined with drilled holes and stainless steel Allen screws.' },
+          { text: 'Dimensions: 73 W × 50 D × 41 H cm.' },
+          { text: 'Photography by Bernardo Martins (@whosbart).' },
+        ],
+      },
+      { type: 'image', src: '/images/acrylic-coffee-table/01-studio.jpg', alt: 'ACRYLIC COFFEE TABLE - Studio view', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      {
+        type: 'imagePair',
+        spacing: '0',
+        style: { maxWidth: '65%', margin: '0 auto' },
+        images: [
+          { src: '/images/acrylic-coffee-table/03-double-left.jpg', alt: 'ACRYLIC COFFEE TABLE - Magazine pocket with lamp' },
+          { src: '/images/acrylic-coffee-table/04-double-right.jpg', alt: 'ACRYLIC COFFEE TABLE - Niche with books and sneakers' },
+        ],
+      },
+      { type: 'image', src: '/images/acrylic-coffee-table/05-reading.jpg', alt: 'ACRYLIC COFFEE TABLE - In use', spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
+      {
+        type: 'imagePair',
+        spacing: '0',
+        style: { maxWidth: '65%', margin: '0 auto' },
+        images: [
+          { src: '/images/acrylic-coffee-table/06-top-view.jpg', alt: 'ACRYLIC COFFEE TABLE - Top view' },
+          { src: '/images/acrylic-coffee-table/07-curve-detail.jpg', alt: 'ACRYLIC COFFEE TABLE - Curve detail' },
+        ],
+      },
     ],
   },
 ]

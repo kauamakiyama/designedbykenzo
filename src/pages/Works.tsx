@@ -8,6 +8,7 @@ import { projects } from '../data/projects'
 // on desktop each work has a fixed position, so the order does not change the layout.
 const WORKS_ORDER_NEWEST_FIRST = [
   'polo-sport-eyewear',
+  'acrylic-coffee-table',
   'levis',
   'quadro-realtree',
   'skipstone',

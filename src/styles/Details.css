@@ -34,6 +34,13 @@
   object-fit: contain;
 }
 
+.details-image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: var(--details-gap, 0);
+}
+
 .details-video {
   width: 100%;
   height: auto;
