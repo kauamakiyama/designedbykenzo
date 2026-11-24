@@ -96,7 +96,10 @@ const renderMediaItem = (item: MediaItem, index: number) => {
           {item.paragraphs.map((paragraph, paragraphIndex) => (
             <p
               key={`${index}-${paragraphIndex}`}
-              className={paragraph.emphasis ? 'details-text-emphasis' : undefined}
+              className={[
+                paragraph.emphasis ? 'details-text-emphasis' : '',
+                paragraph.light ? 'details-text-light' : '',
+              ].join(' ').trim() || undefined}
             >
               {paragraph.text}
             </p>

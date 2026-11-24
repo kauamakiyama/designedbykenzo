@@ -20,7 +20,7 @@
 .nav-item {
   background: none;
   border: none;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--kz-font);
   font-size: calc(1.6 * var(--vw));
   font-weight: 500;
   color: #000000;

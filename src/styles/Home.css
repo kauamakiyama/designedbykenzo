@@ -6,7 +6,7 @@
 .carousel-container {
   position: relative;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--kz-light);
   display: flex;
   align-items: center;
   justify-content: center;

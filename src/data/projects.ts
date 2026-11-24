@@ -76,6 +76,8 @@ export interface SketchfabMediaItem extends BaseMediaItem {
 export interface TextParagraph {
   text: string
   emphasis?: boolean
+  // Helvetica Neue Light: credits, measures, dates
+  light?: boolean
 }
 
 export interface TextMediaItem extends BaseMediaItem {
@@ -384,7 +386,7 @@ export const projects: Project[] = [
         paragraphs: [
           { text: "Objects developed for @levisbrasil's 501 Day." },
           { text: "Stools made from wood and reclaimed denim, created to accompany the event's workshops and experiences." },
-          { text: 'Project developed in collaboration with @rpazzini._ and @toncley_. 👖🪵' },
+          { text: 'Project developed in collaboration with @rpazzini._ and @toncley_. 👖🪵', light: true },
         ],
       },
       { type: 'image', src: 'https://i.ibb.co/BV9TfpcR/6-1.jpg', alt: 'LEVIS - Imagem 1', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
@@ -418,7 +420,7 @@ export const projects: Project[] = [
         paragraphs: [
           { text: "Experience design developed for the launch of Polo Ralph Lauren's Polo Sport Eyewear collection, inspired by the visual language of Wimbledon." },
           { text: 'From early sketches to production and installation, the project included display furniture, exhibition objects, a temporary tennis court and spatial design.' },
-          { text: 'Project in collaboration with Agência 1043 and Rodrigo Pazzini. Photography by Nando and Kim.' },
+          { text: 'Project in collaboration with Agência 1043 and Rodrigo Pazzini. Photography by Nando and Kim.', light: true },
         ],
       },
       { type: 'image', src: 'https://i.ibb.co/Qvj5CxKb/posts-ralph-lauren-01.jpg', alt: 'POLO SPORT EYEWEAR - Imagem 1', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },
@@ -456,8 +458,8 @@ export const projects: Project[] = [
           { text: 'A one-off coffee table, designed and made as a single piece for a private commission.' },
           { text: 'Built from 10 mm cast acrylic in a translucent ruby red, the table is shaped by soft, organic curves, each bend drawn with a 5 cm radius. The piece was entirely hand-bent, one fold at a time.' },
           { text: 'Its structure is divided into two spaces: a side pocket on the left that holds magazines and books, and an open niche beneath the top for books and decorative objects. The parts are joined with drilled holes and stainless steel Allen screws.' },
-          { text: 'Dimensions: 73 W × 50 D × 41 H cm.' },
-          { text: 'Photography by Bernardo Martins (@whosbart).' },
+          { text: 'Dimensions: 73 W × 50 D × 41 H cm.', light: true },
+          { text: 'Photography by Bernardo Martins (@whosbart).', light: true },
         ],
       },
       { type: 'image', src: '/images/acrylic-coffee-table/01-studio.jpg', alt: 'ACRYLIC COFFEE TABLE - Studio view', priority: true, spacing: '0', style: { maxWidth: '65%', margin: '0 auto' } },

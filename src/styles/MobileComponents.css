@@ -11,7 +11,7 @@
     justify-content: space-between !important;
     align-items: center !important;
     padding: 0 16px !important;
-    background-color: #ffffff !important;
+    background-color: var(--kz-light) !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -21,13 +21,13 @@
     
   }
 
-  /* Links das páginas à direita do logo, em Space Mono (como tomducarouge.com) */
+  /* Links das páginas à direita do logo, em Helvetica Neue (ID visual) */
   .mobile-header-nav {
     max-width: 58%;
     text-align: right;
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    line-height: 1.5;
+    font-family: var(--kz-font);
+    font-size: 14px;
+    line-height: 1.4;
     color: #000000;
   }
 

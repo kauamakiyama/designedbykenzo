@@ -1,14 +1,8 @@
 import { useParams } from 'react-router-dom'
 import PageShell from '../components/PageShell'
 import ProjectMedia from '../components/ProjectMedia'
+import BrandFooter from '../components/BrandFooter'
 import { findProjectBySlug } from '../data/projects'
-
-// Titles are stored in capitals; desktop shows them uppercase via CSS,
-// mobile shows them in title case ("Acrylic Coffee Table"), like the reference site
-const toTitleCase = (title: string) => title
-  .toLowerCase()
-  .replace(/\b\w/g, (letter) => letter.toUpperCase())
-  .replace(/ X /g, ' x ')
 
 const ProjectDetailPage = () => {
   const { slug } = useParams()
@@ -22,14 +16,16 @@ const ProjectDetailPage = () => {
     )
   }
 
+  // Same frame as the Visual ID stories: title (bold) left, year (light) right,
+  // then the content, then the dimension mark and logo at the bottom
   return (
     <PageShell contentClassName="details-content">
       <h1 className="details-title">
-        <span className="details-title-name">{toTitleCase(project.title)}</span>
-        <span className="details-title-separator"> - </span>
+        <span className="details-title-name">{project.title}</span>
         <span className="details-title-year">{project.year}</span>
       </h1>
       <ProjectMedia project={project} />
+      <BrandFooter />
     </PageShell>
   )
 }

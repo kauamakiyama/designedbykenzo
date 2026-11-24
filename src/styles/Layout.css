@@ -1,6 +1,6 @@
 .page-shell {
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--kz-light);
   display: flex;
 }
 
@@ -10,14 +10,14 @@
   flex: 1;
   max-width: calc(79 * var(--vw));
   margin-inline: auto;
-  background-color: #ffffff;
+  background-color: var(--kz-light);
 }
 
 /* Total width = 16 + 2 + 3 = 21 units, the rest (79) is .page-content.
    Logo and menu both start at the 3-unit left padding */
 .sidebar-container {
   width: calc(16 * var(--vw));
-  background-color: #ffffff;
+  background-color: var(--kz-light);
   display: flex;
   flex-direction: column;
   padding: calc(2 * var(--vw));
@@ -50,7 +50,7 @@
   color: #000000;
   text-transform: uppercase;
   text-align: left;
-  font-family: Arial, sans-serif;
+  font-family: var(--kz-font);
   margin: 0;
 }
 
@@ -67,7 +67,7 @@
   color: #999999;
   text-align: left;
   max-width: 80%;
-  font-family: Arial, sans-serif;
+  font-family: var(--kz-font);
   font-weight: 400;
   margin-bottom: 1%;
   text-transform: uppercase;
@@ -102,7 +102,7 @@
   font-size: calc(1.1 * var(--vw));
   color: #000000;
   text-align: left;
-  font-family: Arial, sans-serif;
+  font-family: var(--kz-font);
   font-weight: 300;
   line-height: 2;
 }
