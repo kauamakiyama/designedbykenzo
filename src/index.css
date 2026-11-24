@@ -299,6 +299,18 @@ body.home-fixed {
     line-height: 1.5 !important;
   }
 
+  /* Imagens que no desktop ficam centralizadas a 65% ocupam a largura toda no mobile,
+     igual aos projetos mais antigos (só a margem lateral da página) */
+  .details-media-image[style*="max-width: 65%"],
+  .details-image-pair[style*="max-width: 65%"] {
+    max-width: 100% !important;
+  }
+
+  /* Fotos em dupla no desktop viram uma coluna no mobile, cada uma na largura toda */
+  .details-image-pair {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Container de conteúdo das páginas de detalhes - espaço suficiente para não ficar atrás do header fixo (70px + 10% de padding vertical) */
   .details-content {
     padding: calc(70px + 25%) 5% 5% 5% !important;
