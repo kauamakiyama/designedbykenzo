@@ -486,26 +486,24 @@ export const projects: Project[] = [
   },
 ]
 
-export const homeCarouselImages: ProjectImage[] = [
-  { src: 'https://i.ibb.co/CKCNh7kz/8-ROSTOS.jpg', alt: 'Portfolio slide 1' },
-  { src: 'https://i.ibb.co/9md3pZV6/CASSIOANDREASI-2.jpg', alt: 'Portfolio slide 2' },
-  { src: 'https://i.ibb.co/3mPMf980/IMG-9920-JPG.jpg', alt: 'Portfolio slide 3' },
-  { src: 'https://i.ibb.co/zV0GmHSf/banco-frontal-1.jpg', alt: 'Portfolio slide 4' },
-  { src: 'https://i.ibb.co/YBjRfQ5k/hn-bag-na-medida.jpg', alt: 'Portfolio slide 5' },
-  { src: 'https://i.ibb.co/Z1wkCJmM/hn-peitas-na-medida.jpg', alt: 'Portfolio slide 6' },
-  { src: '/images/vento-cover.jpg', alt: 'Portfolio slide 7' },
-  { src: 'https://i.ibb.co/TqNkdt0j/shape-na-medida.jpg', alt: 'Portfolio slide 10' },
-  { src: 'https://i.ibb.co/Mvcw9Qj/suzuki-peitas-na-medida.jpg', alt: 'Portfolio slide 11' },
-  { src: 'https://i.ibb.co/VpH4hQdg/vinil-to-vni-na-medida.jpg', alt: 'Portfolio slide 12' },
-  { src: 'https://i.ibb.co/MkqfNXtD/display-oculos-1.jpg', alt: 'Portfolio slide 13' },
-  { src: 'https://i.ibb.co/C5cGz0fZ/Cenografia-Arranjos-RL-1.jpg', alt: 'Portfolio slide 14' },
-  { src: 'https://i.ibb.co/RTqWT1xS/2.png', alt: 'Portfolio slide 15' },
-  { src: 'https://i.ibb.co/wrdFZJs6/tudo-tudo.png', alt: 'Portfolio slide 16' },
-  { src: 'https://i.ibb.co/cXbBKVTg/9-DSC07728.jpg', alt: 'Portfolio slide 17' },
-  { src: '/images/carrinho-madeira.jpg', alt: 'Portfolio slide 18' },
-  { src: '/images/banco-aluminio.jpg', alt: 'Portfolio slide 19' },
-  { src: '/images/acrylic-coffee-table/05-reading.jpg', alt: 'Portfolio slide 20' },
-  { src: '/images/acrylic-coffee-table/01-studio.jpg', alt: 'Portfolio slide 21' },
+// Home: one photo per project cycling in one fixed 4:5 rectangle (cropped to fill it), under the
+// "objects, spaces & experiences" marquee. `position` picks the crop focus; `contain` shows the
+// whole image on a background of its own color instead of cropping it.
+export interface HomeSlide extends ProjectImage {
+  position?: string
+  contain?: string
+}
+
+export const homeCarouselImages: HomeSlide[] = [
+  { src: '/images/home/01-acrylic-coffee-table.jpg', alt: 'Acrylic Coffee Table', position: 'center 75%' },
+  { src: '/images/home/02-levis.jpg', alt: "Levi's 501 Day stool" },
+  { src: '/images/home/03-quadro-totem.jpg', alt: 'Quadro Creations x Realtree' },
+  { src: '/images/home/04-quadro-bag.jpg', alt: 'Quadro Creations x Realtree bag' },
+  { src: '/images/home/05-polo.jpg', alt: 'Polo Sport Eyewear' },
+  { src: '/images/home/06-skipstone.jpg', alt: 'Skipstone', contain: '#000000' },
+  { src: '/images/home/07-vento.jpg', alt: 'Vento', position: 'center 60%' },
+  { src: '/images/home/08-vela.jpg', alt: 'Vela', position: '37% center' },
+  { src: '/images/home/09-trilho.jpg', alt: 'Trilho', position: 'center 80%' },
 ]
 
 export const findProjectBySlug = (slug?: string) => (

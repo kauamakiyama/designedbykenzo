@@ -13,13 +13,113 @@
   padding: 2%;
 }
 
-/* Width follows the photo so it is never cropped (same framing as mobile) */
-.carousel-image {
-  width: auto;
-  margin-right: 5%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transition: opacity 0.5s ease-in-out;
+/* Home composition measured from tomducarouge.com: a 4:5 photo at 70% of the screen height,
+   centered on the whole screen, and a full-width marquee whose letters are ~10% of the screen
+   height, centered at 59% of the height (crossing the lower part of the photo) */
+.home-frame {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 70.5vh;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: var(--kz-mid);
+}
+
+.home-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-marquee {
+  position: fixed;
+  left: 1.5vw;
+  right: 1.5vw;
+  top: 59%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: home-marquee 28s linear infinite;
+}
+
+/* Helvetica Neue Bold in black (Visual ID) */
+.home-marquee-text {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-family: var(--kz-font);
+  font-weight: 700;
+  font-size: 7.7vw;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--kz-black);
+}
+
+/* Desktop home: like the reference, logo top-left and the page links top-right
+   (the side menu would sit right where the marquee passes) */
+@media (min-width: 768px) {
+  body.home-fixed .sidebar-menu {
+    display: none;
+  }
+
+  body.home-fixed .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 2.2vw 2vw;
+    background: transparent;
+  }
+
+  body.home-fixed .mobile-header-logo {
+    display: none;
+  }
+
+  body.home-fixed .mobile-header-nav {
+    margin-left: auto;
+    text-align: right;
+    font-family: var(--kz-font);
+    font-size: max(15px, 1.25vw);
+    color: var(--kz-black);
+  }
+
+  body.home-fixed .mobile-header-link {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  body.home-fixed .mobile-header-link.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  body.home-fixed .mobile-header-item {
+    white-space: nowrap;
+  }
+}
+
+@keyframes home-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-marquee-track {
+    animation: none;
+  }
 }

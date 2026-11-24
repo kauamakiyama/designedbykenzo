@@ -45,17 +45,32 @@ const Home = () => {
 
   return (
     <PageShell className="main-container home-page" contentClassName="carousel-container content-area">
-      <OptimizedImage
-        key={currentImage.src}
-        src={currentImage.src}
-        alt={currentImage.alt}
-        className="carousel-image"
-        priority
-        width={CAROUSEL_IMAGE_WIDTH}
-        style={{
-          height: '85%',
-        }}
-      />
+      {/* Fixed rectangle: every photo is cropped to the same format */}
+      <div className="home-frame" style={currentImage.contain ? { backgroundColor: currentImage.contain } : undefined}>
+        <OptimizedImage
+          key={currentImage.src}
+          src={currentImage.src}
+          alt={currentImage.alt}
+          className="home-slide"
+          priority
+          width={CAROUSEL_IMAGE_WIDTH}
+          style={{
+            objectFit: currentImage.contain ? 'contain' : 'cover',
+            objectPosition: currentImage.position ?? 'center',
+          }}
+        />
+      </div>
+
+      {/* Visual ID tagline scrolling over the photos */}
+      <div className="home-marquee" aria-label="Objects, spaces & experiences">
+        <div className="home-marquee-track" aria-hidden="true">
+          {[0, 1].map((copy) => (
+            <span key={copy} className="home-marquee-text">
+              objects, spaces &amp; experiences&nbsp;&nbsp;&nbsp;objects, spaces &amp; experiences&nbsp;&nbsp;&nbsp;
+            </span>
+          ))}
+        </div>
+      </div>
     </PageShell>
   )
 }
