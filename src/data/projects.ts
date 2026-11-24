@@ -502,6 +502,8 @@ export const homeCarouselImages: ProjectImage[] = [
   { src: 'https://i.ibb.co/cXbBKVTg/9-DSC07728.jpg', alt: 'Portfolio slide 17' },
   { src: '/images/carrinho-madeira.jpg', alt: 'Portfolio slide 18' },
   { src: '/images/banco-aluminio.jpg', alt: 'Portfolio slide 19' },
+  { src: '/images/acrylic-coffee-table/05-reading.jpg', alt: 'Portfolio slide 20' },
+  { src: '/images/acrylic-coffee-table/01-studio.jpg', alt: 'Portfolio slide 21' },
 ]
 
 export const findProjectBySlug = (slug?: string) => (
