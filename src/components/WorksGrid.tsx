@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import PageShell from '../components/PageShell'
-import OptimizedImage from '../components/OptimizedImage'
+import OptimizedImage from './OptimizedImage'
 import { projects } from '../data/projects'
 
 // Most recent first. On mobile the works are listed in this order;
@@ -27,12 +26,13 @@ const sortedProjects = [...projects].sort((a, b) => (
   orderOf(a.slug) - orderOf(b.slug) || Number(b.year) - Number(a.year)
 ))
 
-const Works = () => {
+// Project covers grid: shown on the home page, below the opening screen
+const WorksGrid = () => {
   const navigate = useNavigate()
   const [hoveredProject, setHoveredProject] = useState<string | null>(null)
 
   return (
-    <PageShell contentClassName="works-grid content-area">
+    <section id="works" className="works-grid content-area" aria-label="Works">
       {sortedProjects.map((project) => {
         const label = project.worksLabel ?? `${project.title} / ${project.year}`
         const mobileSizeClass = project.worksMobileSize
@@ -71,8 +71,8 @@ const Works = () => {
           </button>
         )
       })}
-    </PageShell>
+    </section>
   )
 }
 
-export default Works
+export default WorksGrid

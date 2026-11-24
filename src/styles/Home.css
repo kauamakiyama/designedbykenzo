@@ -1,27 +1,27 @@
-.home-page {
-  flex-direction: row;
-  height: 100vh;
-}
-
-.carousel-container {
+/* Home = opening screen + Works grid on one scrolling page */
+.home-content {
   position: relative;
-  overflow: hidden;
-  background-color: var(--kz-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2%;
 }
 
-/* Home composition measured from tomducarouge.com: a 4:5 photo at 70% of the screen height,
-   centered on the whole screen, and a full-width marquee whose letters are ~10% of the screen
-   height, centered at 59% of the height (crossing the lower part of the photo) */
+/* Opening screen, full width and full height of the window.
+   Composition measured from tomducarouge.com: a 4:5 photo at 70% of the screen height,
+   centered, and a full-width marquee whose letters are ~10% of the screen height,
+   centered at 59% of the height (crossing the lower part of the photo) */
+.home-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
 .home-frame {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 70.5vh;
+  height: 70.5%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background-color: var(--kz-mid);
@@ -34,7 +34,7 @@
 }
 
 .home-marquee {
-  position: fixed;
+  position: absolute;
   left: 1.5vw;
   right: 1.5vw;
   top: 59%;
@@ -62,39 +62,62 @@
   color: var(--kz-black);
 }
 
-/* Desktop home: like the reference, logo top-left and the page links top-right
-   (the side menu would sit right where the marquee passes) */
+/* "Works ↓" at the bottom of the opening screen: there is more below */
+.home-scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 3.5%;
+  transform: translateX(-50%);
+  font-family: var(--kz-font);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--kz-black);
+  text-decoration: none;
+}
+
+.home-scroll-hint:hover {
+  color: var(--kz-black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Desktop home: like the reference, logo top-left and the page links top-right,
+   no side menu (the marquee passes where it would be). The header scrolls away with the page */
 @media (min-width: 768px) {
-  body.home-fixed .sidebar-menu {
+  body.home-mode .sidebar-container {
     display: none;
   }
 
-  body.home-fixed .mobile-header {
+  body.home-mode .mobile-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
-    padding: 2.2vw 2vw;
+    padding: calc(2.2 * var(--vw)) calc(3 * var(--vw));
     background: transparent;
   }
 
-  body.home-fixed .mobile-header-logo {
-    display: none;
+  body.home-mode .mobile-header-logo .logo {
+    margin-top: 0;
   }
 
-  body.home-fixed .mobile-header-nav {
-    margin-left: auto;
+  body.home-mode .mobile-header-logo .logo-image {
+    width: calc(12 * var(--vw));
+  }
+
+  body.home-mode .mobile-header-nav {
     text-align: right;
     font-family: var(--kz-font);
     font-size: max(15px, 1.25vw);
     color: var(--kz-black);
   }
 
-  body.home-fixed .mobile-header-link {
+  body.home-mode .mobile-header-link {
     background: none;
     border: 0;
     padding: 0;
@@ -103,13 +126,18 @@
     cursor: pointer;
   }
 
-  body.home-fixed .mobile-header-link.active {
+  body.home-mode .mobile-header-link.active {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  body.home-fixed .mobile-header-item {
+  body.home-mode .mobile-header-item {
     white-space: nowrap;
+  }
+
+  /* The grid used to sit next to the side menu: keep a little air above it */
+  body.home-mode .works-grid {
+    margin-top: calc(4 * var(--vw));
   }
 }
 

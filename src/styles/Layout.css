@@ -86,33 +86,30 @@
 .about-image {
   width: 100%;
   height: auto;
+  /* Reserve the photo's space before it loads, so /contact can scroll the contacts to the top */
+  aspect-ratio: 1024 / 1536;
   max-width: 100%;
   object-fit: contain;
 }
 
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10% 10%;
+.about-contact {
+  width: 100%;
+  margin-top: 3%;
+  /* Room under the fixed mobile header when /contact opens here */
+  scroll-margin-top: 100px;
 }
 
-.contact-info {
-  font-size: calc(1.1 * var(--vw));
-  color: #000000;
-  text-align: left;
-  font-family: var(--kz-font);
+.about-contact-line {
+  margin: 0 0 0.4em;
+}
+
+.about-contact-label {
+  font-weight: 700;
+}
+
+.about-contact-line a {
+  color: var(--kz-black);
   font-weight: 300;
-  line-height: 2;
-}
-
-.contact-link {
-  margin-bottom: 1%;
-}
-
-.contact-link a {
-  color: #000000;
   text-decoration: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--kz-black);
 }

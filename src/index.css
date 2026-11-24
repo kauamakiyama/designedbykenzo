@@ -71,16 +71,6 @@ button:focus-visible {
 
 /* Remove alternância automática para evitar fundos escuros */
 
-/* Fixar página Home - apenas bloquear scroll */
-body.home-fixed {
-  overflow: hidden !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
 /* Media Queries para dispositivos móveis */
 @media (max-width: 767px) {
   body {
@@ -88,16 +78,6 @@ body.home-fixed {
     padding: 0;
   }
 
-  /* Fixar página Home no mobile - apenas bloquear scroll */
-  body.home-fixed {
-    overflow: hidden !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-  
   h1 {
     font-size: calc(8 * var(--vw));
     line-height: 1.2;
@@ -128,24 +108,16 @@ body.home-fixed {
     margin-right: 0 !important;
   }
 
-  /* Home: a página ocupa a tela inteira e a foto fica no centro dela */
-  .main-container.home-page {
-    height: 100dvh !important;
-    min-height: 0;
-    padding-top: 0 !important;
+  /* Home no mobile: mesma composição, foto 4:5 menor e letreiro maior */
+  .home-content {
+    padding: 0 !important;
   }
 
-  /* Carrossel na página Home */
-  .carousel-container {
-    box-sizing: border-box;
+  .home-hero {
     width: 100%;
-    margin: 0;
-    padding: 4% !important;
-    height: 100% !important;
+    margin-left: 0;
   }
-  
-  /* Home no mobile: retângulo 4:5 na largura da tela, letreiro maior */
-  /* Home no mobile: mesma composição, foto 4:5 menor e letreiro maior */
+
   .home-frame {
     height: auto;
     width: 62vw;
@@ -158,6 +130,13 @@ body.home-fixed {
 
   .home-marquee-text {
     font-size: 24vw;
+  }
+
+  /* Works logo abaixo da abertura: sem o espaço que antes compensava o header */
+  .home-content .works-grid {
+    padding-top: 12% !important;
+    /* /works rola até aqui: não esconder o topo da grade atrás do header fixo */
+    scroll-margin-top: 70px;
   }
 
   /* Páginas de trabalhos */
@@ -255,29 +234,6 @@ body.home-fixed {
   .language-label {
     font-size: calc(4 * var(--vw)) !important;
     line-height: 1.4 !important;
-  }
-
-  /* Página Contact */
-  .contact-container {
-    padding: 60% 6% 6% 6% !important;
-    text-align: center !important;
-  }
-
-  .contact-title {
-    font-size: calc(8.5 * var(--vw)) !important;
-    line-height: 1.2 !important;
-  }
-  
-  .contact-info {
-    font-size: calc(4 * var(--vw)) !important;
-    line-height: 1.6 !important;
-    margin-bottom: 4% !important;
-  }
-  
-  .contact-link {
-    font-size: calc(4.5 * var(--vw)) !important;
-    margin: 3% 0 !important;
-    display: block !important;
   }
 
   /* Textos gerais responsivos */

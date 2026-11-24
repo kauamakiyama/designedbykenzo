@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import PageShell from '../components/PageShell'
 import OptimizedImage from '../components/OptimizedImage'
 
@@ -17,6 +18,24 @@ const portugueseParagraphs = [
   'Estou sempre aberto a colaborações, projetos comissionados e novas oportunidades.',
 ]
 
+const contacts = [
+  {
+    label: 'E-mail',
+    href: 'mailto:designedbykenzo@gmail.com',
+    text: 'designedbykenzo@gmail.com',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/naulkenzo/',
+    text: 'instagram.com/naulkenzo',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/luankenzocorreiamakiyama/',
+    text: 'linkedin.com/in/luankenzocorreiamakiyama',
+  },
+]
+
 interface LanguageSectionProps {
   label: string
   paragraphs: string[]
@@ -33,21 +52,45 @@ const LanguageSection = ({ label, paragraphs }: LanguageSectionProps) => (
   </section>
 )
 
-const About = () => (
-  <PageShell contentClassName="about-container content-area">
-    <h1 className="mobile-text-large about-title">HELLO.</h1>
+// About and Contact are one page ("Information"); /contact opens it scrolled to the contacts
+const About = () => {
+  const { pathname } = useLocation()
 
-    <LanguageSection label="EN" paragraphs={englishParagraphs} />
-    <LanguageSection label="PT" paragraphs={portugueseParagraphs} />
+  return (
+    <PageShell
+      contentClassName="about-container content-area"
+      scrollTargetId={pathname.startsWith('/contact') ? 'contact' : undefined}
+    >
+      <h1 className="mobile-text-large about-title">HELLO.</h1>
 
-    <div className="about-image-wrap">
-      <OptimizedImage
-        src="https://i.ibb.co/zhLzJysJ/37909da8-3ae5-43ab-9bb8-e5d062fb2c26-1.png"
-        alt="Luan Kenzo"
-        className="about-image"
-      />
-    </div>
-  </PageShell>
-)
+      <LanguageSection label="EN" paragraphs={englishParagraphs} />
+      <LanguageSection label="PT" paragraphs={portugueseParagraphs} />
+
+      <section id="contact" className="about-contact" aria-label="Contact">
+        <div className="language-label">[CONTACT]</div>
+        {contacts.map((contact) => (
+          <p key={contact.label} className="details-text about-contact-line">
+            <span className="about-contact-label">{contact.label}</span>{' '}
+            <a
+              href={contact.href}
+              target={contact.href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={contact.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+            >
+              {contact.text}
+            </a>
+          </p>
+        ))}
+      </section>
+
+      <div className="about-image-wrap">
+        <OptimizedImage
+          src="https://i.ibb.co/zhLzJysJ/37909da8-3ae5-43ab-9bb8-e5d062fb2c26-1.png"
+          alt="Luan Kenzo"
+          className="about-image"
+        />
+      </div>
+    </PageShell>
+  )
+}
 
 export default About

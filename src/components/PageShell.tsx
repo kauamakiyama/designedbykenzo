@@ -7,18 +7,26 @@ interface PageShellProps {
   children: ReactNode
   className?: string
   contentClassName?: string
+  // Element id to show when the page opens (e.g. "works" for /works); otherwise the page opens at the top
+  scrollTargetId?: string
 }
 
 const PageShell = ({
   children,
   className = '',
   contentClassName = '',
+  scrollTargetId,
 }: PageShellProps) => {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    const target = scrollTargetId ? document.getElementById(scrollTargetId) : null
+    if (target) {
+      target.scrollIntoView()
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, scrollTargetId])
 
   return (
     <div className={`page-shell ${className}`.trim()}>

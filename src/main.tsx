@@ -2,9 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home'
-import Works from './pages/Works'
 import About from './pages/About'
-import Contact from './pages/Contact'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import Products from './pages/Products'
 import ProductDetailPage from './pages/ProductDetailPage'
@@ -18,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/works',
-    element: <Works/>,
+    element: <Home/>,
   },
   {
     path: '/products',
@@ -34,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/contact',
-    element: <Contact/>,
+    element: <About/>,
   },
   ...projects
     .filter((project) => project.legacyPath)
