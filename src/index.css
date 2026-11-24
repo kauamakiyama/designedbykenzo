@@ -182,6 +182,29 @@ body.home-fixed {
 
 
 
+  /* Legenda fixa sob cada capa no mobile: nome do projeto + ano e seta */
+  .work-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .work-caption-title {
+    font-weight: bold;
+  }
+
+  .work-caption-meta {
+    flex-shrink: 0;
+    color: #666666;
+  }
+
   /* Ocultar overlays de hover em mobile */
   .work-overlay {
     display: none !important;

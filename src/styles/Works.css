@@ -48,3 +48,8 @@
   padding: 2%;
   pointer-events: none;
 }
+
+/* Mobile-only caption under each cover, so it reads as a link to the project */
+.work-caption {
+  display: none;
+}

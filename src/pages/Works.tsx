@@ -7,8 +7,8 @@ import { projects } from '../data/projects'
 // Most recent first. On mobile the works are listed in this order;
 // on desktop each work has a fixed position, so the order does not change the layout.
 const WORKS_ORDER_NEWEST_FIRST = [
-  'polo-sport-eyewear',
   'acrylic-coffee-table',
+  'polo-sport-eyewear',
   'levis',
   'quadro-realtree',
   'skipstone',
@@ -57,6 +57,11 @@ const Works = () => {
               priority={project.cover.priority}
               width={1600}
             />
+
+            <span className="work-caption" aria-hidden="true">
+              <span className="work-caption-title">{project.title}</span>
+              <span className="work-caption-meta">{project.year} →</span>
+            </span>
 
             {hoveredProject === project.slug && (
               <span className="work-overlay">
