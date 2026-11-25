@@ -92,6 +92,50 @@ const trilhoSectionPhoto = (kind: string, description: string) => (size: string,
 
 export const products: Product[] = [
   {
+    slug: 'acrylic-coffee-table',
+    name: 'Acrylic Coffee Table',
+    summary: 'A coffee table hand-bent from 10 mm cast acrylic.',
+    description: [
+      'Soft, organic curves, each bend drawn with a 5 cm radius. A side pocket holds magazines and books; an open niche beneath the top takes books and objects.',
+      'Made to order, one piece at a time. Shown in translucent ruby red; other colours on request.',
+    ],
+    specs: [
+      { label: 'Dimensions', value: 'W 730 × D 500 × H 410 mm' },
+      { label: 'Material', value: '10 mm cast acrylic' },
+      { label: 'Colour', value: 'Translucent ruby red / on request' },
+      { label: 'Fixings', value: 'Stainless steel Allen screws' },
+    ],
+    cover: {
+      src: '/images/products/acrylic-coffee-table/03-front.jpg',
+      alt: 'Acrylic Coffee Table in translucent ruby red, front view in the studio',
+      priority: true,
+    },
+    gallery: [
+      { src: '/images/products/acrylic-coffee-table/02-room.jpg', alt: 'Acrylic Coffee Table in a room, with a lamp, a laptop, books and sneakers' },
+      { src: '/images/products/acrylic-coffee-table/01-three-quarter.jpg', alt: 'Acrylic Coffee Table, three-quarter view with the magazine pocket' },
+      { src: '/images/products/acrylic-coffee-table/04-fixings.jpg', alt: 'Acrylic Coffee Table, detail of the stainless steel Allen screws joining the parts' },
+      { src: '/images/products/acrylic-coffee-table/05-curve.jpg', alt: 'Acrylic Coffee Table, detail of the 5 cm radius curve of the magazine pocket' },
+      { src: '/images/products/acrylic-coffee-table/06-scale.jpg', alt: 'Acrylic Coffee Table next to a person sitting on the rug, showing its scale' },
+    ],
+    sections: [
+      {
+        number: '02',
+        title: 'Material / Colour',
+        main: {
+          image: {
+            src: '/images/acrylic-coffee-table/01-studio.jpg',
+            alt: 'Acrylic Coffee Table in translucent ruby red, side view in the studio',
+          },
+        },
+        text: [
+          'Cast acrylic is bent by hand along the curves, so each table is made individually. The colour runs through the whole sheet: light passes through it and tints what sits below.',
+          'The table can be produced in other acrylic colours — get in touch to choose yours.',
+        ],
+        specs: ['W 730 × D 500 × H 410 mm', '10 mm cast acrylic', 'Bend radius 50 mm'],
+      },
+    ],
+  },
+  {
     slug: 'trilho',
     name: 'Trilho',
     summary: 'A bench built from solid timber beams and extruded aluminium profiles.',
@@ -107,9 +151,9 @@ export const products: Product[] = [
     gallery: [],
     variants: {
       sizes: [
-        { id: 'p', label: 'S', dimensions: '500 × 340 × 400 mm', zoom: 1.6 },
-        { id: 'm', label: 'M', dimensions: '1500 × 340 × 400 mm' },
-        { id: 'g', label: 'L', dimensions: '2500 × 340 × 400 mm' },
+        { id: 'p', label: 'S', dimensions: 'W 500 × D 340 × H 400 mm', zoom: 1.6 },
+        { id: 'm', label: 'M', dimensions: 'W 1500 × D 340 × H 400 mm' },
+        { id: 'g', label: 'L', dimensions: 'W 2500 × D 340 × H 400 mm' },
       ],
       colors: [
         { id: 'verde', label: 'Green' },
@@ -139,7 +183,7 @@ export const products: Product[] = [
             alt: 'Trilho benches in the three sizes: large in green, medium in blue and small in orange',
           },
         },
-        specs: ['S — 500 × 340 × 400 mm', 'M — 1500 × 340 × 400 mm', 'L — 2500 × 340 × 400 mm', 'Solid timber / extruded aluminium'],
+        specs: ['S — W 500 × D 340 × H 400 mm', 'M — W 1500 × D 340 × H 400 mm', 'L — W 2500 × D 340 × H 400 mm', 'Solid timber / extruded aluminium'],
         text: ['The same system adapts to different lengths: three sizes, one height and depth.'],
       },
       {

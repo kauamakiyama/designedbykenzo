@@ -458,7 +458,7 @@ export const projects: Project[] = [
           { text: 'A one-off coffee table, designed and made as a single piece for a private commission.' },
           { text: 'Built from 10 mm cast acrylic in a translucent ruby red, the table is shaped by soft, organic curves, each bend drawn with a 5 cm radius. The piece was entirely hand-bent, one fold at a time.' },
           { text: 'Its structure is divided into two spaces: a side pocket on the left that holds magazines and books, and an open niche beneath the top for books and decorative objects. The parts are joined with drilled holes and stainless steel Allen screws.' },
-          { text: 'Dimensions: 73 W × 50 D × 41 H cm.', light: true },
+          { text: 'Dimensions: W 730 × D 500 × H 410 mm.', light: true },
           { text: 'Photography by Bernardo Martins (@whosbart).', light: true },
         ],
       },
