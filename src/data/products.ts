@@ -46,6 +46,23 @@ export interface ProductVariants {
   extras?: (size: string, color: string) => ProjectImage[]
 }
 
+// Colour swatch picked on the product page; the choice goes into the "get in touch" message
+export interface ColourSwatch {
+  id: string
+  label: string
+  src: string
+  // The colour shown in the photos
+  shown?: boolean
+}
+
+export interface ColourPalette {
+  number: string
+  title: string
+  text?: string[]
+  swatches: ColourSwatch[]
+  note?: string
+}
+
 export interface Product {
   slug: string
   name: string
@@ -56,6 +73,7 @@ export interface Product {
   gallery: ProjectImage[]
   variants?: ProductVariants
   sections?: ProductSection[]
+  palette?: ColourPalette
 }
 
 const TRILHO_SIZE_NAMES: Record<string, string> = { p: 'small', m: 'medium', g: 'large' }
@@ -134,6 +152,26 @@ export const products: Product[] = [
         specs: ['W 730 × D 500 × H 410 mm', '10 mm cast acrylic', 'Bend radius 50 mm'],
       },
     ],
+    palette: {
+      number: '03',
+      title: 'Colours',
+      text: ['Choose the acrylic colour of your table. Transparent tones let light through and tint what sits below; opaque ones read as a solid surface.'],
+      swatches: [
+        { id: 'crystal-clear', label: 'Crystal clear', src: '/images/products/acrylic-coffee-table/colours/crystal-clear.png' },
+        { id: 'milky', label: 'Milky', src: '/images/products/acrylic-coffee-table/colours/milky.png' },
+        { id: 'white', label: 'White', src: '/images/products/acrylic-coffee-table/colours/white.png' },
+        { id: 'smoke', label: 'Transparent smoke', src: '/images/products/acrylic-coffee-table/colours/smoke.png' },
+        { id: 'opaque-black', label: 'Opaque black', src: '/images/products/acrylic-coffee-table/colours/opaque-black.png' },
+        { id: 'translucent-sand', label: 'Translucent sand', src: '/images/products/acrylic-coffee-table/colours/translucent-sand.png' },
+        { id: 'transparent-red', label: 'Transparent red', src: '/images/products/acrylic-coffee-table/colours/transparent-red.png', shown: true },
+        { id: 'opaque-red', label: 'Opaque red', src: '/images/products/acrylic-coffee-table/colours/opaque-red.png' },
+        { id: 'translucent-nude', label: 'Translucent nude', src: '/images/products/acrylic-coffee-table/colours/translucent-nude.png' },
+        { id: 'transparent-dark-green', label: 'Transparent dark green', src: '/images/products/acrylic-coffee-table/colours/transparent-dark-green.png' },
+        { id: 'translucent-jade', label: 'Translucent jade', src: '/images/products/acrylic-coffee-table/colours/translucent-jade.png' },
+        { id: 'transparent-blue', label: 'Transparent mid blue', src: '/images/products/acrylic-coffee-table/colours/transparent-blue.png' },
+      ],
+      note: 'Other colours available on request.',
+    },
   },
   {
     slug: 'trilho',

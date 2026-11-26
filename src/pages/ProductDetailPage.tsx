@@ -4,6 +4,7 @@ import PageShell from '../components/PageShell'
 import OptimizedImage from '../components/OptimizedImage'
 import {
   findProductBySlug,
+  type ColourPalette,
   type ProductMedia,
   type ProductOption,
   type ProductSection,
@@ -120,11 +121,54 @@ const SectionBlock = ({ section, sizeId, colorId }: SectionBlockProps) => {
   )
 }
 
+interface PaletteBlockProps {
+  palette: ColourPalette
+  selected: string
+  onSelect: (id: string) => void
+}
+
+// Grid of acrylic colour samples; the selected one goes into the "get in touch" message
+const PaletteBlock = ({ palette, selected, onSelect }: PaletteBlockProps) => (
+  <section className="product-section product-palette">
+    <h2 className="product-section-label">
+      {palette.number} — {palette.title}
+    </h2>
+
+    {palette.text && (
+      <div className="details-text product-palette-text">
+        {palette.text.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    )}
+
+    <div className="product-palette-grid" role="radiogroup" aria-label={palette.title}>
+      {palette.swatches.map((swatch) => (
+        <button
+          key={swatch.id}
+          type="button"
+          role="radio"
+          aria-checked={swatch.id === selected}
+          className={`product-swatch${swatch.id === selected ? ' is-selected' : ''}`}
+          onClick={() => onSelect(swatch.id)}
+        >
+          <img src={swatch.src} alt="" className="product-swatch-image" loading="lazy" />
+          <span className="product-swatch-label">{swatch.label}</span>
+          {swatch.shown && <span className="product-swatch-shown">Shown</span>}
+        </button>
+      ))}
+    </div>
+
+    {palette.note && <p className="product-palette-note">{palette.note}</p>}
+  </section>
+)
+
 const ProductDetailPage = () => {
   const { slug } = useParams()
   const product = findProductBySlug(slug)
   const [sizeId, setSizeId] = useState<string>()
   const [colorId, setColorId] = useState<string>()
+  const [swatchId, setSwatchId] = useState<string>()
 
   if (!product) {
     return (
@@ -148,9 +192,18 @@ const ProductDetailPage = () => {
   const specs = size
     ? [{ label: 'Dimensions', value: size.dimensions ?? 'On request' }, ...product.specs]
     : product.specs
+  const { palette } = product
+  // Defaults to the colour shown in the photos
+  const swatch = palette && (
+    palette.swatches.find((option) => option.id === swatchId)
+      ?? palette.swatches.find((option) => option.shown)
+      ?? palette.swatches[0]
+  )
   const orderName = size && color
     ? `${product.name} (size ${size.label}, ${color.label.toLowerCase()})`
-    : product.name
+    : swatch
+      ? `${product.name} (colour: ${swatch.label.toLowerCase()})`
+      : product.name
 
   return (
     <PageShell contentClassName="details-content">
@@ -230,6 +283,21 @@ const ProductDetailPage = () => {
       {product.sections?.map((section) => (
         <SectionBlock key={section.number} section={section} sizeId={size?.id} colorId={color?.id} />
       ))}
+
+      {palette && swatch && (
+        <>
+          <PaletteBlock palette={palette} selected={swatch.id} onSelect={setSwatchId} />
+
+          <a
+            href={getWhatsappUrl(orderName)}
+            className="product-buy product-palette-buy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get in touch to buy — {swatch.label}
+          </a>
+        </>
+      )}
     </PageShell>
   )
 }
